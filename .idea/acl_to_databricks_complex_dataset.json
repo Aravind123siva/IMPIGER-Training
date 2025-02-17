@@ -1,0 +1,2002 @@
+[
+  {
+    "input": "AVG Year FROM employees",
+    "output": "SELECT AVG(Year) FROM employees;"
+  },
+  {
+    "input": "SORT departments BY Region ASC",
+    "output": "SELECT * FROM departments ORDER BY Region ASC;"
+  },
+  {
+    "input": "FILTER orders WHERE Department = 'Sales'",
+    "output": "SELECT * FROM orders WHERE Department = 'Sales';"
+  },
+  {
+    "input": "UNION departments AND employees",
+    "output": "SELECT * FROM departments UNION SELECT * FROM employees;"
+  },
+  {
+    "input": "HAVING orders WHERE Quantity < 10",
+    "output": "SELECT ProductID, Department, CustomerID, Region, Quantity, Year, Price, Salary FROM orders GROUP BY ProductID, Department, CustomerID, Region, Quantity, Year, Price, Salary HAVING Quantity < 10;"
+  },
+  {
+    "input": "FILTER orders WHERE Quantity IN (SELECT Quantity FROM sales WHERE Quantity < 10)",
+    "output": "SELECT * FROM orders WHERE Quantity IN (SELECT Quantity FROM sales WHERE Quantity < 10);"
+  },
+  {
+    "input": "AVG ProductID FROM transactions",
+    "output": "SELECT AVG(ProductID) FROM transactions;"
+  },
+  {
+    "input": "SUM HireDate FROM departments",
+    "output": "SELECT SUM(HireDate) FROM departments;"
+  },
+  {
+    "input": "LIMIT products TO 100",
+    "output": "SELECT * FROM products LIMIT 100;"
+  },
+  {
+    "input": "WITH cte_39 AS (SELECT Department, Region, ProductID, HireDate, Salary, Year, Quantity, OrderID, Price FROM transactions WHERE Department = 'Sales') SELECT Department, Region, ProductID, HireDate, Salary, Year, Quantity, OrderID, Price FROM cte_39",
+    "output": "WITH cte_39 AS (SELECT Department, Region, ProductID, HireDate, Salary, Year, Quantity, OrderID, Price FROM transactions WHERE Department = 'Sales') SELECT Department, Region, ProductID, HireDate, Salary, Year, Quantity, OrderID, Price FROM cte_39;"
+  },
+  {
+    "input": "SELECT Department, OrderID FROM customers WHERE Salary > 50000",
+    "output": "SELECT Department, OrderID FROM customers WHERE Salary > 50000;"
+  },
+  {
+    "input": "SELECT Region, OrderID, Year, Quantity, DATE_TRUNC('year', ProductID) AS Year FROM sales",
+    "output": "SELECT Region, OrderID, Year, Quantity, DATE_TRUNC('year', ProductID) AS Year FROM sales;"
+  },
+  {
+    "input": "LIMIT sales TO 20",
+    "output": "SELECT * FROM sales LIMIT 20;"
+  },
+  {
+    "input": "FILTER departments WHERE Salary IN (SELECT Salary FROM departments WHERE Region = 'North')",
+    "output": "SELECT * FROM departments WHERE Salary IN (SELECT Salary FROM departments WHERE Region = 'North');"
+  },
+  {
+    "input": "SORT departments BY CustomerID DESC",
+    "output": "SELECT * FROM departments ORDER BY CustomerID DESC;"
+  },
+  {
+    "input": "DELETE FROM departments WHERE Salary > 50000",
+    "output": "DELETE FROM departments WHERE Salary > 50000;"
+  },
+  {
+    "input": "LIMIT transactions TO 100",
+    "output": "SELECT * FROM transactions LIMIT 100;"
+  },
+  {
+    "input": "JOIN departments AND sales ON departments.Price = sales.ProductID",
+    "output": "SELECT * FROM departments INNER JOIN sales ON departments.Price = sales.ProductID;"
+  },
+  {
+    "input": "DELETE FROM sales WHERE Year = 2023",
+    "output": "DELETE FROM sales WHERE Year = 2023;"
+  },
+  {
+    "input": "AGGREGATE Profit BY Region, Department",
+    "output": "SELECT Region, Department, MAX(Profit) AS Total_Revenue FROM orders GROUP BY Region, Department;"
+  },
+  {
+    "input": "EXCEPT customers AND customers",
+    "output": "SELECT * FROM customers EXCEPT SELECT * FROM customers;"
+  },
+  {
+    "input": "LIMIT transactions TO 10",
+    "output": "SELECT * FROM transactions LIMIT 10;"
+  },
+  {
+    "input": "JOIN orders AND sales ON orders.Department = sales.ProductID",
+    "output": "SELECT * FROM orders INNER JOIN sales ON orders.Department = sales.ProductID;"
+  },
+  {
+    "input": "DISTINCT Quantity FROM products",
+    "output": "SELECT DISTINCT Quantity FROM products;"
+  },
+  {
+    "input": "MIN Quantity FROM departments",
+    "output": "SELECT MIN(Quantity) FROM departments;"
+  },
+  {
+    "input": "EXCEPT sales AND departments",
+    "output": "SELECT * FROM sales EXCEPT SELECT * FROM departments;"
+  },
+  {
+    "input": "MIN Region FROM transactions",
+    "output": "SELECT MIN(Region) FROM transactions;"
+  },
+  {
+    "input": "SELECT Department, CustomerID, HireDate, Salary, ProductID, OrderID, Quantity, Year, Price, Region, CASE WHEN Region = 'North' THEN 2023 ELSE 10000 END AS ProductID FROM employees",
+    "output": "SELECT Department, CustomerID, HireDate, Salary, ProductID, OrderID, Quantity, Year, Price, Region, CASE WHEN Region = 'North' THEN 2023 ELSE 10000 END AS ProductID FROM employees;"
+  },
+  {
+    "input": "AGGREGATE Profit BY Department",
+    "output": "SELECT Department, AVG(Profit) AS Total_Profit FROM departments GROUP BY Department;"
+  },
+  {
+    "input": "JOIN employees AND orders ON employees.CustomerID = orders.ProductID",
+    "output": "SELECT * FROM employees INNER JOIN orders ON employees.CustomerID = orders.ProductID;"
+  },
+  {
+    "input": "MAX ProductID FROM customers",
+    "output": "SELECT MAX(ProductID) FROM customers;"
+  },
+  {
+    "input": "JOIN employees AND departments ON employees.HireDate = departments.ProductID AND employees.Year = departments.HireDate",
+    "output": "SELECT * FROM employees INNER JOIN departments ON employees.HireDate = departments.ProductID AND employees.Year = departments.HireDate;"
+  },
+  {
+    "input": "SELECT Quantity, ROW_NUMBER() OVER (PARTITION BY Year ORDER BY Region) AS row_num FROM products",
+    "output": "SELECT Quantity, ROW_NUMBER() OVER (PARTITION BY Year ORDER BY Region) AS row_num FROM products;"
+  },
+  {
+    "input": "FILTER products WHERE Year = 2023",
+    "output": "SELECT * FROM products WHERE Year = 2023;"
+  },
+  {
+    "input": "DISTINCT Year FROM transactions",
+    "output": "SELECT DISTINCT Year FROM transactions;"
+  },
+  {
+    "input": "EXCEPT employees AND employees",
+    "output": "SELECT * FROM employees EXCEPT SELECT * FROM employees;"
+  },
+  {
+    "input": "MAX OrderID FROM orders",
+    "output": "SELECT MAX(OrderID) FROM orders;"
+  },
+  {
+    "input": "MAX Quantity FROM products",
+    "output": "SELECT MAX(Quantity) FROM products;"
+  },
+  {
+    "input": "AVG Quantity FROM transactions",
+    "output": "SELECT AVG(Quantity) FROM transactions;"
+  },
+  {
+    "input": "MAX Price FROM products",
+    "output": "SELECT MAX(Price) FROM products;"
+  },
+  {
+    "input": "MIN OrderID FROM sales",
+    "output": "SELECT MIN(OrderID) FROM sales;"
+  },
+  {
+    "input": "FILTER products WHERE ProductID IN (SELECT ProductID FROM departments WHERE Salary > 50000)",
+    "output": "SELECT * FROM products WHERE ProductID IN (SELECT ProductID FROM departments WHERE Salary > 50000);"
+  },
+  {
+    "input": "EXCEPT sales AND sales",
+    "output": "SELECT * FROM sales EXCEPT SELECT * FROM sales;"
+  },
+  {
+    "input": "EXCEPT departments AND products",
+    "output": "SELECT * FROM departments EXCEPT SELECT * FROM products;"
+  },
+  {
+    "input": "DISTINCT HireDate FROM departments",
+    "output": "SELECT DISTINCT HireDate FROM departments;"
+  },
+  {
+    "input": "FILTER orders WHERE HireDate IN (SELECT HireDate FROM sales WHERE Salary > 50000)",
+    "output": "SELECT * FROM orders WHERE HireDate IN (SELECT HireDate FROM sales WHERE Salary > 50000);"
+  },
+  {
+    "input": "SELECT Year, Price, Region, OrderID, Salary, CustomerID, HireDate, Quantity FROM departments WHERE ProductID = (SELECT ProductID FROM sales WHERE Year = 2023)",
+    "output": "SELECT Year, Price, Region, OrderID, Salary, CustomerID, HireDate, Quantity FROM departments WHERE ProductID = (SELECT ProductID FROM sales WHERE Year = 2023);"
+  },
+  {
+    "input": "AVG Quantity FROM employees",
+    "output": "SELECT AVG(Quantity) FROM employees;"
+  },
+  {
+    "input": "FILTER customers WHERE Quantity < 10",
+    "output": "SELECT * FROM customers WHERE Quantity < 10;"
+  },
+  {
+    "input": "SELECT Department, DATE_TRUNC('day', Salary) AS CustomerID FROM customers",
+    "output": "SELECT Department, DATE_TRUNC('day', Salary) AS CustomerID FROM customers;"
+  },
+  {
+    "input": "WITH cte_61 AS (SELECT Quantity, OrderID, Region, CustomerID, Price, HireDate, Year, Department, ProductID, Salary FROM products WHERE Quantity < 10) SELECT Quantity, OrderID, Region, CustomerID, Price, HireDate, Year, Department, ProductID, Salary FROM cte_61",
+    "output": "WITH cte_61 AS (SELECT Quantity, OrderID, Region, CustomerID, Price, HireDate, Year, Department, ProductID, Salary FROM products WHERE Quantity < 10) SELECT Quantity, OrderID, Region, CustomerID, Price, HireDate, Year, Department, ProductID, Salary FROM cte_61;"
+  },
+  {
+    "input": "HAVING customers WHERE Quantity < 10",
+    "output": "SELECT HireDate, Price, Region, Quantity, Department FROM customers GROUP BY HireDate, Price, Region, Quantity, Department HAVING Quantity < 10;"
+  },
+  {
+    "input": "FILTER sales WHERE HireDate IN (SELECT HireDate FROM employees WHERE Department = 'Sales')",
+    "output": "SELECT * FROM sales WHERE HireDate IN (SELECT HireDate FROM employees WHERE Department = 'Sales');"
+  },
+  {
+    "input": "INTERSECT sales AND products",
+    "output": "SELECT * FROM sales INTERSECT SELECT * FROM products;"
+  },
+  {
+    "input": "MAX Quantity FROM departments",
+    "output": "SELECT MAX(Quantity) FROM departments;"
+  },
+  {
+    "input": "JOIN sales AND customers ON sales.Salary = customers.Region",
+    "output": "SELECT * FROM sales INNER JOIN customers ON sales.Salary = customers.Region;"
+  },
+  {
+    "input": "INTERSECT departments AND products",
+    "output": "SELECT * FROM departments INTERSECT SELECT * FROM products;"
+  },
+  {
+    "input": "SELECT Department, HireDate, ProductID, CONCAT(CustomerID, ' ', Salary) AS Department FROM sales",
+    "output": "SELECT Department, HireDate, ProductID, CONCAT(CustomerID, ' ', Salary) AS Department FROM sales;"
+  },
+  {
+    "input": "UNION products AND departments",
+    "output": "SELECT * FROM products UNION SELECT * FROM departments;"
+  },
+  {
+    "input": "RENAME products Salary TO OrderID",
+    "output": "ALTER TABLE products RENAME COLUMN Salary TO OrderID;"
+  },
+  {
+    "input": "SELECT ProductID, Department, HireDate, Price, Salary, OrderID, Region FROM products WHERE Year = 2023",
+    "output": "SELECT ProductID, Department, HireDate, Price, Salary, OrderID, Region FROM products WHERE Year = 2023;"
+  },
+  {
+    "input": "FILTER departments WHERE Department = 'Sales'",
+    "output": "SELECT * FROM departments WHERE Department = 'Sales';"
+  },
+  {
+    "input": "HAVING products WHERE Salary > 50000",
+    "output": "SELECT Salary, OrderID, Department FROM products GROUP BY Salary, OrderID, Department HAVING Salary > 50000;"
+  },
+  {
+    "input": "AGGREGATE Revenue BY Department, Year, Region",
+    "output": "SELECT Department, Year, Region, MIN(Revenue) AS Total_Sales FROM employees GROUP BY Department, Year, Region;"
+  },
+  {
+    "input": "LIMIT orders TO 20",
+    "output": "SELECT * FROM orders LIMIT 20;"
+  },
+  {
+    "input": "AGGREGATE Revenue BY Region, Year",
+    "output": "SELECT Region, Year, MIN(Revenue) AS Total_Revenue FROM orders GROUP BY Region, Year;"
+  },
+  {
+    "input": "SELECT HireDate, Department, Price, CASE WHEN Quantity < 10 THEN 'HR' ELSE 2023 END AS Salary FROM products",
+    "output": "SELECT HireDate, Department, Price, CASE WHEN Quantity < 10 THEN 'HR' ELSE 2023 END AS Salary FROM products;"
+  },
+  {
+    "input": "AVG Price FROM products",
+    "output": "SELECT AVG(Price) FROM products;"
+  },
+  {
+    "input": "RENAME transactions Quantity TO Price",
+    "output": "ALTER TABLE transactions RENAME COLUMN Quantity TO Price;"
+  },
+  {
+    "input": "WITH cte_61 AS (SELECT ProductID, Region, Price FROM orders WHERE Department = 'Sales') SELECT ProductID, Region, Price FROM cte_61",
+    "output": "WITH cte_61 AS (SELECT ProductID, Region, Price FROM orders WHERE Department = 'Sales') SELECT ProductID, Region, Price FROM cte_61;"
+  },
+  {
+    "input": "WITH cte_37 AS (SELECT Salary, HireDate, OrderID, Year, ProductID, Quantity, Region, Price, Department FROM sales WHERE Department = 'Sales') SELECT Salary, HireDate, OrderID, Year, ProductID, Quantity, Region, Price, Department FROM cte_37",
+    "output": "WITH cte_37 AS (SELECT Salary, HireDate, OrderID, Year, ProductID, Quantity, Region, Price, Department FROM sales WHERE Department = 'Sales') SELECT Salary, HireDate, OrderID, Year, ProductID, Quantity, Region, Price, Department FROM cte_37;"
+  },
+  {
+    "input": "SELECT OrderID, Region, Quantity, Year, ROW_NUMBER() OVER (PARTITION BY CustomerID ORDER BY Year) AS row_num FROM departments",
+    "output": "SELECT OrderID, Region, Quantity, Year, ROW_NUMBER() OVER (PARTITION BY CustomerID ORDER BY Year) AS row_num FROM departments;"
+  },
+  {
+    "input": "AVG Quantity FROM employees",
+    "output": "SELECT AVG(Quantity) FROM employees;"
+  },
+  {
+    "input": "COUNT sales WHERE Region = 'North'",
+    "output": "SELECT COUNT(*) FROM sales WHERE Region = 'North';"
+  },
+  {
+    "input": "SELECT ProductID, HireDate, OrderID, Year, ROW_NUMBER() OVER (PARTITION BY Price ORDER BY OrderID) AS row_num FROM customers",
+    "output": "SELECT ProductID, HireDate, OrderID, Year, ROW_NUMBER() OVER (PARTITION BY Price ORDER BY OrderID) AS row_num FROM customers;"
+  },
+  {
+    "input": "JOIN orders AND employees ON orders.ProductID = employees.HireDate",
+    "output": "SELECT * FROM orders INNER JOIN employees ON orders.ProductID = employees.HireDate;"
+  },
+  {
+    "input": "SELECT Quantity, Year, CustomerID, HireDate, CONCAT(OrderID, ' ', OrderID) AS ProductID FROM sales",
+    "output": "SELECT Quantity, Year, CustomerID, HireDate, CONCAT(OrderID, ' ', OrderID) AS ProductID FROM sales;"
+  },
+  {
+    "input": "UPDATE transactions SET CustomerID = 'HR' WHERE Quantity < 10",
+    "output": "UPDATE transactions SET CustomerID = 'HR' WHERE Quantity < 10;"
+  },
+  {
+    "input": "JOIN employees AND departments ON employees.Salary = departments.Price",
+    "output": "SELECT * FROM employees INNER JOIN departments ON employees.Salary = departments.Price;"
+  },
+  {
+    "input": "AGGREGATE Profit BY Year",
+    "output": "SELECT Year, MIN(Profit) AS Total_Profit FROM products GROUP BY Year;"
+  },
+  {
+    "input": "WITH cte_23 AS (SELECT OrderID, ProductID FROM customers WHERE Salary > 50000) SELECT OrderID, ProductID FROM cte_23",
+    "output": "WITH cte_23 AS (SELECT OrderID, ProductID FROM customers WHERE Salary > 50000) SELECT OrderID, ProductID FROM cte_23;"
+  },
+  {
+    "input": "MAX Department FROM sales",
+    "output": "SELECT MAX(Department) FROM sales;"
+  },
+  {
+    "input": "WITH cte_7 AS (SELECT CustomerID, HireDate, Department, OrderID, Price, Quantity, Region, Year, ProductID, Salary FROM transactions WHERE Department = 'Sales') SELECT CustomerID, HireDate, Department, OrderID, Price, Quantity, Region, Year, ProductID, Salary FROM cte_7",
+    "output": "WITH cte_7 AS (SELECT CustomerID, HireDate, Department, OrderID, Price, Quantity, Region, Year, ProductID, Salary FROM transactions WHERE Department = 'Sales') SELECT CustomerID, HireDate, Department, OrderID, Price, Quantity, Region, Year, ProductID, Salary FROM cte_7;"
+  },
+  {
+    "input": "SORT orders BY Year DESC",
+    "output": "SELECT * FROM orders ORDER BY Year DESC;"
+  },
+  {
+    "input": "INTERSECT sales AND departments",
+    "output": "SELECT * FROM sales INTERSECT SELECT * FROM departments;"
+  },
+  {
+    "input": "INTERSECT employees AND sales",
+    "output": "SELECT * FROM employees INTERSECT SELECT * FROM sales;"
+  },
+  {
+    "input": "DELETE FROM products WHERE Salary > 50000",
+    "output": "DELETE FROM products WHERE Salary > 50000;"
+  },
+  {
+    "input": "LIMIT employees TO 50",
+    "output": "SELECT * FROM employees LIMIT 50;"
+  },
+  {
+    "input": "MIN HireDate FROM departments",
+    "output": "SELECT MIN(HireDate) FROM departments;"
+  },
+  {
+    "input": "EXCEPT products AND employees",
+    "output": "SELECT * FROM products EXCEPT SELECT * FROM employees;"
+  },
+  {
+    "input": "DISTINCT HireDate FROM products",
+    "output": "SELECT DISTINCT HireDate FROM products;"
+  },
+  {
+    "input": "SELECT OrderID, Salary, Price, CustomerID, Department, ProductID, HireDate, DATE_TRUNC('year', ProductID) AS ProductID FROM employees",
+    "output": "SELECT OrderID, Salary, Price, CustomerID, Department, ProductID, HireDate, DATE_TRUNC('year', ProductID) AS ProductID FROM employees;"
+  },
+  {
+    "input": "MIN Quantity FROM orders",
+    "output": "SELECT MIN(Quantity) FROM orders;"
+  },
+  {
+    "input": "SELECT Salary, Quantity, HireDate, Region, Department, Year, ProductID, CustomerID, OrderID, Price FROM employees WHERE Year = 2023",
+    "output": "SELECT Salary, Quantity, HireDate, Region, Department, Year, ProductID, CustomerID, OrderID, Price FROM employees WHERE Year = 2023;"
+  },
+  {
+    "input": "SELECT Year, OrderID, DATE_TRUNC('month', HireDate) AS Salary FROM orders",
+    "output": "SELECT Year, OrderID, DATE_TRUNC('month', HireDate) AS Salary FROM orders;"
+  },
+  {
+    "input": "UPDATE departments SET Region = 2023 WHERE Region = 'North'",
+    "output": "UPDATE departments SET Region = 2023 WHERE Region = 'North';"
+  },
+  {
+    "input": "DELETE FROM transactions WHERE Quantity < 10",
+    "output": "DELETE FROM transactions WHERE Quantity < 10;"
+  },
+  {
+    "input": "DELETE FROM orders WHERE Department = 'Sales'",
+    "output": "DELETE FROM orders WHERE Department = 'Sales';"
+  },
+  {
+    "input": "UPDATE employees SET Price = 'HR' WHERE Year = 2023",
+    "output": "UPDATE employees SET Price = 'HR' WHERE Year = 2023;"
+  },
+  {
+    "input": "SELECT Quantity, Salary, OrderID, CustomerID, Department, ROW_NUMBER() OVER (PARTITION BY Region ORDER BY HireDate) AS row_num FROM orders",
+    "output": "SELECT Quantity, Salary, OrderID, CustomerID, Department, ROW_NUMBER() OVER (PARTITION BY Region ORDER BY HireDate) AS row_num FROM orders;"
+  },
+  {
+    "input": "MIN ProductID FROM customers",
+    "output": "SELECT MIN(ProductID) FROM customers;"
+  },
+  {
+    "input": "SUM OrderID FROM employees",
+    "output": "SELECT SUM(OrderID) FROM employees;"
+  },
+  {
+    "input": "HAVING employees WHERE Region = 'North'",
+    "output": "SELECT Price, Region, ProductID, CustomerID, OrderID, HireDate, Salary, Year FROM employees GROUP BY Price, Region, ProductID, CustomerID, OrderID, HireDate, Salary, Year HAVING Region = 'North';"
+  },
+  {
+    "input": "WITH cte_23 AS (SELECT OrderID, Salary, Year, HireDate, Price, ProductID, Region, CustomerID, Department FROM departments WHERE Region = 'North') SELECT OrderID, Salary, Year, HireDate, Price, ProductID, Region, CustomerID, Department FROM cte_23",
+    "output": "WITH cte_23 AS (SELECT OrderID, Salary, Year, HireDate, Price, ProductID, Region, CustomerID, Department FROM departments WHERE Region = 'North') SELECT OrderID, Salary, Year, HireDate, Price, ProductID, Region, CustomerID, Department FROM cte_23;"
+  },
+  {
+    "input": "SELECT Year, Region, Department, Salary, Price, OrderID, HireDate, Quantity FROM departments WHERE Quantity = (SELECT Quantity FROM employees WHERE Department = 'Sales')",
+    "output": "SELECT Year, Region, Department, Salary, Price, OrderID, HireDate, Quantity FROM departments WHERE Quantity = (SELECT Quantity FROM employees WHERE Department = 'Sales');"
+  },
+  {
+    "input": "AVG CustomerID FROM transactions",
+    "output": "SELECT AVG(CustomerID) FROM transactions;"
+  },
+  {
+    "input": "GROUP departments BY Salary, HireDate, Region, Price, ProductID, OrderID, Department, Year, Quantity, CustomerID",
+    "output": "SELECT Salary, HireDate, Region, Price, ProductID, OrderID, Department, Year, Quantity, CustomerID FROM departments GROUP BY Salary, HireDate, Region, Price, ProductID, OrderID, Department, Year, Quantity, CustomerID;"
+  },
+  {
+    "input": "FILTER employees WHERE HireDate IN (SELECT HireDate FROM transactions WHERE Region = 'North')",
+    "output": "SELECT * FROM employees WHERE HireDate IN (SELECT HireDate FROM transactions WHERE Region = 'North');"
+  },
+  {
+    "input": "UPDATE sales SET CustomerID = 10000 WHERE Quantity < 10",
+    "output": "UPDATE sales SET CustomerID = 10000 WHERE Quantity < 10;"
+  },
+  {
+    "input": "WITH cte_37 AS (SELECT HireDate, ProductID, OrderID FROM orders WHERE Region = 'North') SELECT HireDate, ProductID, OrderID FROM cte_37",
+    "output": "WITH cte_37 AS (SELECT HireDate, ProductID, OrderID FROM orders WHERE Region = 'North') SELECT HireDate, ProductID, OrderID FROM cte_37;"
+  },
+  {
+    "input": "FILTER employees WHERE Department IN (SELECT Department FROM customers WHERE Year = 2023)",
+    "output": "SELECT * FROM employees WHERE Department IN (SELECT Department FROM customers WHERE Year = 2023);"
+  },
+  {
+    "input": "SELECT Year, DATE_TRUNC('month', Salary) AS ProductID FROM transactions",
+    "output": "SELECT Year, DATE_TRUNC('month', Salary) AS ProductID FROM transactions;"
+  },
+  {
+    "input": "SELECT Price, Quantity, Year, HireDate, CustomerID FROM sales WHERE Year = 2023",
+    "output": "SELECT Price, Quantity, Year, HireDate, CustomerID FROM sales WHERE Year = 2023;"
+  },
+  {
+    "input": "SELECT ProductID FROM customers WHERE CustomerID = (SELECT CustomerID FROM customers WHERE Quantity < 10)",
+    "output": "SELECT ProductID FROM customers WHERE CustomerID = (SELECT CustomerID FROM customers WHERE Quantity < 10);"
+  },
+  {
+    "input": "SELECT ProductID, HireDate, Region, CustomerID, Department, OrderID, Quantity, ROW_NUMBER() OVER (PARTITION BY Department ORDER BY OrderID) AS row_num FROM sales",
+    "output": "SELECT ProductID, HireDate, Region, CustomerID, Department, OrderID, Quantity, ROW_NUMBER() OVER (PARTITION BY Department ORDER BY OrderID) AS row_num FROM sales;"
+  },
+  {
+    "input": "HAVING employees WHERE Salary > 50000",
+    "output": "SELECT CustomerID, ProductID, Year, HireDate, Region FROM employees GROUP BY CustomerID, ProductID, Year, HireDate, Region HAVING Salary > 50000;"
+  },
+  {
+    "input": "UPDATE orders SET Department = 'HR' WHERE Salary > 50000",
+    "output": "UPDATE orders SET Department = 'HR' WHERE Salary > 50000;"
+  },
+  {
+    "input": "AVG Quantity FROM sales",
+    "output": "SELECT AVG(Quantity) FROM sales;"
+  },
+  {
+    "input": "SELECT HireDate, Region, CustomerID, Price, OrderID, Quantity, Salary, ProductID, Year, DATE_TRUNC('day', CustomerID) AS CustomerID FROM customers",
+    "output": "SELECT HireDate, Region, CustomerID, Price, OrderID, Quantity, Salary, ProductID, Year, DATE_TRUNC('day', CustomerID) AS CustomerID FROM customers;"
+  },
+  {
+    "input": "MIN Salary FROM departments",
+    "output": "SELECT MIN(Salary) FROM departments;"
+  },
+  {
+    "input": "MAX OrderID FROM products",
+    "output": "SELECT MAX(OrderID) FROM products;"
+  },
+  {
+    "input": "SUM Year FROM transactions",
+    "output": "SELECT SUM(Year) FROM transactions;"
+  },
+  {
+    "input": "SELECT CustomerID, Department, ProductID, HireDate, Year, Price, Quantity, Region FROM employees WHERE Region = 'North'",
+    "output": "SELECT CustomerID, Department, ProductID, HireDate, Year, Price, Quantity, Region FROM employees WHERE Region = 'North';"
+  },
+  {
+    "input": "SELECT Year FROM customers WHERE Quantity = (SELECT Quantity FROM departments WHERE Salary > 50000)",
+    "output": "SELECT Year FROM customers WHERE Quantity = (SELECT Quantity FROM departments WHERE Salary > 50000);"
+  },
+  {
+    "input": "RENAME transactions Salary TO Salary",
+    "output": "ALTER TABLE transactions RENAME COLUMN Salary TO Salary;"
+  },
+  {
+    "input": "SUM OrderID FROM transactions",
+    "output": "SELECT SUM(OrderID) FROM transactions;"
+  },
+  {
+    "input": "WITH cte_60 AS (SELECT OrderID, Price, Department, Year FROM employees WHERE Salary > 50000) SELECT OrderID, Price, Department, Year FROM cte_60",
+    "output": "WITH cte_60 AS (SELECT OrderID, Price, Department, Year FROM employees WHERE Salary > 50000) SELECT OrderID, Price, Department, Year FROM cte_60;"
+  },
+  {
+    "input": "AGGREGATE Sales BY Year",
+    "output": "SELECT Year, AVG(Sales) AS Total_Sales FROM transactions GROUP BY Year;"
+  },
+  {
+    "input": "FILTER orders WHERE Quantity < 10",
+    "output": "SELECT * FROM orders WHERE Quantity < 10;"
+  },
+  {
+    "input": "AGGREGATE Revenue BY Region, Year",
+    "output": "SELECT Region, Year, AVG(Revenue) AS Total_Revenue FROM transactions GROUP BY Region, Year;"
+  },
+  {
+    "input": "AVG CustomerID FROM sales",
+    "output": "SELECT AVG(CustomerID) FROM sales;"
+  },
+  {
+    "input": "SELECT Year, HireDate, OrderID, Price, DATE_TRUNC('month', Salary) AS Department FROM transactions",
+    "output": "SELECT Year, HireDate, OrderID, Price, DATE_TRUNC('month', Salary) AS Department FROM transactions;"
+  },
+  {
+    "input": "DISTINCT Salary FROM orders",
+    "output": "SELECT DISTINCT Salary FROM orders;"
+  },
+  {
+    "input": "RENAME transactions Year TO HireDate",
+    "output": "ALTER TABLE transactions RENAME COLUMN Year TO HireDate;"
+  },
+  {
+    "input": "SORT departments BY Region DESC",
+    "output": "SELECT * FROM departments ORDER BY Region DESC;"
+  },
+  {
+    "input": "JOIN departments AND employees ON departments.OrderID = employees.HireDate AND departments.Salary = employees.HireDate",
+    "output": "SELECT * FROM departments INNER JOIN employees ON departments.OrderID = employees.HireDate AND departments.Salary = employees.HireDate;"
+  },
+  {
+    "input": "DISTINCT Price FROM departments",
+    "output": "SELECT DISTINCT Price FROM departments;"
+  },
+  {
+    "input": "UNION sales AND employees",
+    "output": "SELECT * FROM sales UNION SELECT * FROM employees;"
+  },
+  {
+    "input": "EXCEPT employees AND sales",
+    "output": "SELECT * FROM employees EXCEPT SELECT * FROM sales;"
+  },
+  {
+    "input": "FILTER orders WHERE Department = 'Sales'",
+    "output": "SELECT * FROM orders WHERE Department = 'Sales';"
+  },
+  {
+    "input": "JOIN orders AND orders ON orders.Department = orders.HireDate",
+    "output": "SELECT * FROM orders INNER JOIN orders ON orders.Department = orders.HireDate;"
+  },
+  {
+    "input": "UNION products AND products",
+    "output": "SELECT * FROM products UNION SELECT * FROM products;"
+  },
+  {
+    "input": "SELECT CustomerID, Region, Department, HireDate, Price FROM products WHERE Year = 2023",
+    "output": "SELECT CustomerID, Region, Department, HireDate, Price FROM products WHERE Year = 2023;"
+  },
+  {
+    "input": "UPDATE departments SET ProductID = 'HR' WHERE Year = 2023",
+    "output": "UPDATE departments SET ProductID = 'HR' WHERE Year = 2023;"
+  },
+  {
+    "input": "SELECT CustomerID, ProductID, HireDate, Region, Salary, CONCAT(Year, ' ', Region) AS ProductID FROM orders",
+    "output": "SELECT CustomerID, ProductID, HireDate, Region, Salary, CONCAT(Year, ' ', Region) AS ProductID FROM orders;"
+  },
+  {
+    "input": "WITH cte_1 AS (SELECT CustomerID, Region, Department, Price, Year, HireDate, Quantity, OrderID FROM transactions WHERE Quantity < 10) SELECT CustomerID, Region, Department, Price, Year, HireDate, Quantity, OrderID FROM cte_1",
+    "output": "WITH cte_1 AS (SELECT CustomerID, Region, Department, Price, Year, HireDate, Quantity, OrderID FROM transactions WHERE Quantity < 10) SELECT CustomerID, Region, Department, Price, Year, HireDate, Quantity, OrderID FROM cte_1;"
+  },
+  {
+    "input": "SELECT Quantity, Region FROM transactions WHERE Salary = (SELECT Salary FROM sales WHERE Region = 'North')",
+    "output": "SELECT Quantity, Region FROM transactions WHERE Salary = (SELECT Salary FROM sales WHERE Region = 'North');"
+  },
+  {
+    "input": "RENAME sales Department TO Region",
+    "output": "ALTER TABLE sales RENAME COLUMN Department TO Region;"
+  },
+  {
+    "input": "RENAME employees Region TO Price",
+    "output": "ALTER TABLE employees RENAME COLUMN Region TO Price;"
+  },
+  {
+    "input": "LIMIT transactions TO 20",
+    "output": "SELECT * FROM transactions LIMIT 20;"
+  },
+  {
+    "input": "AGGREGATE Revenue BY Department",
+    "output": "SELECT Department, MIN(Revenue) AS Total_Profit FROM products GROUP BY Department;"
+  },
+  {
+    "input": "FILTER products WHERE Price IN (SELECT Price FROM departments WHERE Region = 'North')",
+    "output": "SELECT * FROM products WHERE Price IN (SELECT Price FROM departments WHERE Region = 'North');"
+  },
+  {
+    "input": "RENAME departments Region TO ProductID",
+    "output": "ALTER TABLE departments RENAME COLUMN Region TO ProductID;"
+  },
+  {
+    "input": "RENAME orders Region TO Region",
+    "output": "ALTER TABLE orders RENAME COLUMN Region TO Region;"
+  },
+  {
+    "input": "MAX OrderID FROM customers",
+    "output": "SELECT MAX(OrderID) FROM customers;"
+  },
+  {
+    "input": "AGGREGATE Sales BY Region, Department, Year",
+    "output": "SELECT Region, Department, Year, AVG(Sales) AS Total_Sales FROM orders GROUP BY Region, Department, Year;"
+  },
+  {
+    "input": "RENAME customers Salary TO HireDate",
+    "output": "ALTER TABLE customers RENAME COLUMN Salary TO HireDate;"
+  },
+  {
+    "input": "INTERSECT orders AND departments",
+    "output": "SELECT * FROM orders INTERSECT SELECT * FROM departments;"
+  },
+  {
+    "input": "INTERSECT customers AND employees",
+    "output": "SELECT * FROM customers INTERSECT SELECT * FROM employees;"
+  },
+  {
+    "input": "SUM Quantity FROM customers",
+    "output": "SELECT SUM(Quantity) FROM customers;"
+  },
+  {
+    "input": "AVG CustomerID FROM orders",
+    "output": "SELECT AVG(CustomerID) FROM orders;"
+  },
+  {
+    "input": "SELECT Quantity, Price, Year, ProductID FROM orders WHERE Salary > 50000",
+    "output": "SELECT Quantity, Price, Year, ProductID FROM orders WHERE Salary > 50000;"
+  },
+  {
+    "input": "FILTER sales WHERE Salary > 50000",
+    "output": "SELECT * FROM sales WHERE Salary > 50000;"
+  },
+  {
+    "input": "SUM HireDate FROM products",
+    "output": "SELECT SUM(HireDate) FROM products;"
+  },
+  {
+    "input": "SELECT HireDate, OrderID FROM employees WHERE HireDate = (SELECT HireDate FROM employees WHERE Region = 'North')",
+    "output": "SELECT HireDate, OrderID FROM employees WHERE HireDate = (SELECT HireDate FROM employees WHERE Region = 'North');"
+  },
+  {
+    "input": "UPDATE employees SET Department = 2023 WHERE Salary > 50000",
+    "output": "UPDATE employees SET Department = 2023 WHERE Salary > 50000;"
+  },
+  {
+    "input": "GROUP transactions BY Year, Region, CustomerID, Department, HireDate, Salary, ProductID",
+    "output": "SELECT Year, Region, CustomerID, Department, HireDate, Salary, ProductID FROM transactions GROUP BY Year, Region, CustomerID, Department, HireDate, Salary, ProductID;"
+  },
+  {
+    "input": "SELECT Department, CustomerID, Region, Salary, ROW_NUMBER() OVER (PARTITION BY HireDate ORDER BY OrderID) AS row_num FROM customers",
+    "output": "SELECT Department, CustomerID, Region, Salary, ROW_NUMBER() OVER (PARTITION BY HireDate ORDER BY OrderID) AS row_num FROM customers;"
+  },
+  {
+    "input": "DELETE FROM products WHERE Quantity < 10",
+    "output": "DELETE FROM products WHERE Quantity < 10;"
+  },
+  {
+    "input": "JOIN products AND customers ON products.Year = customers.CustomerID AND products.CustomerID = customers.Department",
+    "output": "SELECT * FROM products INNER JOIN customers ON products.Year = customers.CustomerID AND products.CustomerID = customers.Department;"
+  },
+  {
+    "input": "UNION employees AND employees",
+    "output": "SELECT * FROM employees UNION SELECT * FROM employees;"
+  },
+  {
+    "input": "UNION customers AND employees",
+    "output": "SELECT * FROM customers UNION SELECT * FROM employees;"
+  },
+  {
+    "input": "DELETE FROM departments WHERE Salary > 50000",
+    "output": "DELETE FROM departments WHERE Salary > 50000;"
+  },
+  {
+    "input": "SORT customers BY ProductID DESC",
+    "output": "SELECT * FROM customers ORDER BY ProductID DESC;"
+  },
+  {
+    "input": "HAVING orders WHERE Department = 'Sales'",
+    "output": "SELECT Salary, Department, HireDate, Price, ProductID, Year, Quantity, Region, CustomerID, OrderID FROM orders GROUP BY Salary, Department, HireDate, Price, ProductID, Year, Quantity, Region, CustomerID, OrderID HAVING Department = 'Sales';"
+  },
+  {
+    "input": "GROUP orders BY HireDate, Region",
+    "output": "SELECT HireDate, Region FROM orders GROUP BY HireDate, Region;"
+  },
+  {
+    "input": "SELECT Year, OrderID, ProductID, Salary, HireDate, Department, ROW_NUMBER() OVER (PARTITION BY HireDate ORDER BY Region) AS row_num FROM sales",
+    "output": "SELECT Year, OrderID, ProductID, Salary, HireDate, Department, ROW_NUMBER() OVER (PARTITION BY HireDate ORDER BY Region) AS row_num FROM sales;"
+  },
+  {
+    "input": "AGGREGATE Sales BY Year",
+    "output": "SELECT Year, COUNT(Sales) AS Total_Revenue FROM orders GROUP BY Year;"
+  },
+  {
+    "input": "HAVING products WHERE Department = 'Sales'",
+    "output": "SELECT Salary, Year FROM products GROUP BY Salary, Year HAVING Department = 'Sales';"
+  },
+  {
+    "input": "GROUP orders BY HireDate, CustomerID, Region, Price, Salary, Quantity, OrderID, Department, Year, ProductID",
+    "output": "SELECT HireDate, CustomerID, Region, Price, Salary, Quantity, OrderID, Department, Year, ProductID FROM orders GROUP BY HireDate, CustomerID, Region, Price, Salary, Quantity, OrderID, Department, Year, ProductID;"
+  },
+  {
+    "input": "JOIN transactions AND orders ON transactions.Quantity = orders.CustomerID",
+    "output": "SELECT * FROM transactions INNER JOIN orders ON transactions.Quantity = orders.CustomerID;"
+  },
+  {
+    "input": "RENAME customers Quantity TO HireDate",
+    "output": "ALTER TABLE customers RENAME COLUMN Quantity TO HireDate;"
+  },
+  {
+    "input": "UNION transactions AND employees",
+    "output": "SELECT * FROM transactions UNION SELECT * FROM employees;"
+  },
+  {
+    "input": "SORT sales BY Price ASC",
+    "output": "SELECT * FROM sales ORDER BY Price ASC;"
+  },
+  {
+    "input": "HAVING orders WHERE Department = 'Sales'",
+    "output": "SELECT HireDate FROM orders GROUP BY HireDate HAVING Department = 'Sales';"
+  },
+  {
+    "input": "HAVING products WHERE Year = 2023",
+    "output": "SELECT ProductID, Year, OrderID, Quantity, Department, Region, HireDate, Salary FROM products GROUP BY ProductID, Year, OrderID, Quantity, Department, Region, HireDate, Salary HAVING Year = 2023;"
+  },
+  {
+    "input": "MAX Salary FROM transactions",
+    "output": "SELECT MAX(Salary) FROM transactions;"
+  },
+  {
+    "input": "HAVING transactions WHERE Quantity < 10",
+    "output": "SELECT CustomerID, Salary, Quantity, OrderID FROM transactions GROUP BY CustomerID, Salary, Quantity, OrderID HAVING Quantity < 10;"
+  },
+  {
+    "input": "JOIN orders AND orders ON orders.CustomerID = orders.Price AND orders.Salary = orders.Price",
+    "output": "SELECT * FROM orders INNER JOIN orders ON orders.CustomerID = orders.Price AND orders.Salary = orders.Price;"
+  },
+  {
+    "input": "INTERSECT transactions AND customers",
+    "output": "SELECT * FROM transactions INTERSECT SELECT * FROM customers;"
+  },
+  {
+    "input": "SELECT Salary, DATE_TRUNC('day', Department) AS ProductID FROM products",
+    "output": "SELECT Salary, DATE_TRUNC('day', Department) AS ProductID FROM products;"
+  },
+  {
+    "input": "HAVING departments WHERE Year = 2023",
+    "output": "SELECT Region, Department, Year, CustomerID, OrderID, ProductID, HireDate, Price, Quantity FROM departments GROUP BY Region, Department, Year, CustomerID, OrderID, ProductID, HireDate, Price, Quantity HAVING Year = 2023;"
+  },
+  {
+    "input": "FILTER employees WHERE CustomerID IN (SELECT CustomerID FROM employees WHERE Department = 'Sales')",
+    "output": "SELECT * FROM employees WHERE CustomerID IN (SELECT CustomerID FROM employees WHERE Department = 'Sales');"
+  },
+  {
+    "input": "FILTER employees WHERE Region = 'North'",
+    "output": "SELECT * FROM employees WHERE Region = 'North';"
+  },
+  {
+    "input": "INTERSECT orders AND employees",
+    "output": "SELECT * FROM orders INTERSECT SELECT * FROM employees;"
+  },
+  {
+    "input": "SELECT Price, Region, Department, ProductID, ROW_NUMBER() OVER (PARTITION BY Region ORDER BY ProductID) AS row_num FROM transactions",
+    "output": "SELECT Price, Region, Department, ProductID, ROW_NUMBER() OVER (PARTITION BY Region ORDER BY ProductID) AS row_num FROM transactions;"
+  },
+  {
+    "input": "FILTER orders WHERE Region = 'North'",
+    "output": "SELECT * FROM orders WHERE Region = 'North';"
+  },
+  {
+    "input": "UNION orders AND transactions",
+    "output": "SELECT * FROM orders UNION SELECT * FROM transactions;"
+  },
+  {
+    "input": "GROUP orders BY Department, Region, HireDate, Price, ProductID, Year, Salary, CustomerID, OrderID, Quantity",
+    "output": "SELECT Department, Region, HireDate, Price, ProductID, Year, Salary, CustomerID, OrderID, Quantity FROM orders GROUP BY Department, Region, HireDate, Price, ProductID, Year, Salary, CustomerID, OrderID, Quantity;"
+  },
+  {
+    "input": "AGGREGATE Revenue BY Year",
+    "output": "SELECT Year, AVG(Revenue) AS Total_Profit FROM products GROUP BY Year;"
+  },
+  {
+    "input": "SELECT Salary, Year, HireDate, ProductID FROM sales WHERE Department = 'Sales'",
+    "output": "SELECT Salary, Year, HireDate, ProductID FROM sales WHERE Department = 'Sales';"
+  },
+  {
+    "input": "SORT sales BY Region ASC",
+    "output": "SELECT * FROM sales ORDER BY Region ASC;"
+  },
+  {
+    "input": "SELECT Quantity, OrderID, Department, CustomerID, Year, HireDate, Price FROM orders WHERE Region = (SELECT Region FROM sales WHERE Salary > 50000)",
+    "output": "SELECT Quantity, OrderID, Department, CustomerID, Year, HireDate, Price FROM orders WHERE Region = (SELECT Region FROM sales WHERE Salary > 50000);"
+  },
+  {
+    "input": "SELECT Quantity, ProductID, OrderID, Price, CustomerID, HireDate, Department, Year, Region FROM sales WHERE OrderID = (SELECT OrderID FROM sales WHERE Salary > 50000)",
+    "output": "SELECT Quantity, ProductID, OrderID, Price, CustomerID, HireDate, Department, Year, Region FROM sales WHERE OrderID = (SELECT OrderID FROM sales WHERE Salary > 50000);"
+  },
+  {
+    "input": "AVG OrderID FROM products",
+    "output": "SELECT AVG(OrderID) FROM products;"
+  },
+  {
+    "input": "MAX Price FROM transactions",
+    "output": "SELECT MAX(Price) FROM transactions;"
+  },
+  {
+    "input": "AGGREGATE Profit BY Year, Region",
+    "output": "SELECT Year, Region, MAX(Profit) AS Total_Sales FROM products GROUP BY Year, Region;"
+  },
+  {
+    "input": "LIMIT transactions TO 50",
+    "output": "SELECT * FROM transactions LIMIT 50;"
+  },
+  {
+    "input": "WITH cte_3 AS (SELECT HireDate, ProductID, Region, Quantity, Price, Department, Salary, Year, CustomerID, OrderID FROM departments WHERE Department = 'Sales') SELECT HireDate, ProductID, Region, Quantity, Price, Department, Salary, Year, CustomerID, OrderID FROM cte_3",
+    "output": "WITH cte_3 AS (SELECT HireDate, ProductID, Region, Quantity, Price, Department, Salary, Year, CustomerID, OrderID FROM departments WHERE Department = 'Sales') SELECT HireDate, ProductID, Region, Quantity, Price, Department, Salary, Year, CustomerID, OrderID FROM cte_3;"
+  },
+  {
+    "input": "SELECT ProductID, Price, Region, Quantity, OrderID, Department, Year, HireDate, DATE_TRUNC('year', Department) AS Price FROM transactions",
+    "output": "SELECT ProductID, Price, Region, Quantity, OrderID, Department, Year, HireDate, DATE_TRUNC('year', Department) AS Price FROM transactions;"
+  },
+  {
+    "input": "SELECT Year, Price, Region, HireDate, ProductID, Salary, OrderID, Quantity, Department, CustomerID, ROW_NUMBER() OVER (PARTITION BY HireDate ORDER BY Region) AS row_num FROM orders",
+    "output": "SELECT Year, Price, Region, HireDate, ProductID, Salary, OrderID, Quantity, Department, CustomerID, ROW_NUMBER() OVER (PARTITION BY HireDate ORDER BY Region) AS row_num FROM orders;"
+  },
+  {
+    "input": "MIN Region FROM transactions",
+    "output": "SELECT MIN(Region) FROM transactions;"
+  },
+  {
+    "input": "LIMIT orders TO 50",
+    "output": "SELECT * FROM orders LIMIT 50;"
+  },
+  {
+    "input": "SUM Quantity FROM products",
+    "output": "SELECT SUM(Quantity) FROM products;"
+  },
+  {
+    "input": "LIMIT sales TO 50",
+    "output": "SELECT * FROM sales LIMIT 50;"
+  },
+  {
+    "input": "SELECT OrderID, Quantity, Price, HireDate, Department, CustomerID, ProductID, Salary, Year, Region FROM transactions WHERE OrderID = (SELECT OrderID FROM transactions WHERE Department = 'Sales')",
+    "output": "SELECT OrderID, Quantity, Price, HireDate, Department, CustomerID, ProductID, Salary, Year, Region FROM transactions WHERE OrderID = (SELECT OrderID FROM transactions WHERE Department = 'Sales');"
+  },
+  {
+    "input": "AVG Quantity FROM products",
+    "output": "SELECT AVG(Quantity) FROM products;"
+  },
+  {
+    "input": "SUM Salary FROM orders",
+    "output": "SELECT SUM(Salary) FROM orders;"
+  },
+  {
+    "input": "AGGREGATE Profit BY Region",
+    "output": "SELECT Region, MAX(Profit) AS Total_Revenue FROM orders GROUP BY Region;"
+  },
+  {
+    "input": "JOIN employees AND transactions ON employees.HireDate = transactions.OrderID",
+    "output": "SELECT * FROM employees INNER JOIN transactions ON employees.HireDate = transactions.OrderID;"
+  },
+  {
+    "input": "AGGREGATE Sales BY Department, Region",
+    "output": "SELECT Department, Region, COUNT(Sales) AS Total_Profit FROM transactions GROUP BY Department, Region;"
+  },
+  {
+    "input": "COUNT employees WHERE Department = 'Sales'",
+    "output": "SELECT COUNT(*) FROM employees WHERE Department = 'Sales';"
+  },
+  {
+    "input": "SELECT ProductID, Quantity, Department, HireDate, Salary FROM sales WHERE CustomerID = (SELECT CustomerID FROM employees WHERE Year = 2023)",
+    "output": "SELECT ProductID, Quantity, Department, HireDate, Salary FROM sales WHERE CustomerID = (SELECT CustomerID FROM employees WHERE Year = 2023);"
+  },
+  {
+    "input": "DISTINCT Year FROM orders",
+    "output": "SELECT DISTINCT Year FROM orders;"
+  },
+  {
+    "input": "SUM HireDate FROM sales",
+    "output": "SELECT SUM(HireDate) FROM sales;"
+  },
+  {
+    "input": "UNION departments AND customers",
+    "output": "SELECT * FROM departments UNION SELECT * FROM customers;"
+  },
+  {
+    "input": "MIN Quantity FROM orders",
+    "output": "SELECT MIN(Quantity) FROM orders;"
+  },
+  {
+    "input": "LIMIT sales TO 100",
+    "output": "SELECT * FROM sales LIMIT 100;"
+  },
+  {
+    "input": "AGGREGATE Sales BY Region",
+    "output": "SELECT Region, COUNT(Sales) AS Total_Sales FROM customers GROUP BY Region;"
+  },
+  {
+    "input": "HAVING departments WHERE Salary > 50000",
+    "output": "SELECT Price, Quantity, HireDate FROM departments GROUP BY Price, Quantity, HireDate HAVING Salary > 50000;"
+  },
+  {
+    "input": "JOIN orders AND products ON orders.Department = products.Department",
+    "output": "SELECT * FROM orders INNER JOIN products ON orders.Department = products.Department;"
+  },
+  {
+    "input": "UNION sales AND employees",
+    "output": "SELECT * FROM sales UNION SELECT * FROM employees;"
+  },
+  {
+    "input": "SELECT Region, Salary, CustomerID FROM sales WHERE Salary > 50000",
+    "output": "SELECT Region, Salary, CustomerID FROM sales WHERE Salary > 50000;"
+  },
+  {
+    "input": "SELECT Region, CustomerID, Salary FROM products WHERE CustomerID = (SELECT CustomerID FROM orders WHERE Year = 2023)",
+    "output": "SELECT Region, CustomerID, Salary FROM products WHERE CustomerID = (SELECT CustomerID FROM orders WHERE Year = 2023);"
+  },
+  {
+    "input": "SELECT Department, ProductID, Quantity, HireDate, Price, Salary, ROW_NUMBER() OVER (PARTITION BY Region ORDER BY Department) AS row_num FROM transactions",
+    "output": "SELECT Department, ProductID, Quantity, HireDate, Price, Salary, ROW_NUMBER() OVER (PARTITION BY Region ORDER BY Department) AS row_num FROM transactions;"
+  },
+  {
+    "input": "JOIN transactions AND orders ON transactions.Price = orders.HireDate",
+    "output": "SELECT * FROM transactions INNER JOIN orders ON transactions.Price = orders.HireDate;"
+  },
+  {
+    "input": "AVG CustomerID FROM departments",
+    "output": "SELECT AVG(CustomerID) FROM departments;"
+  },
+  {
+    "input": "AGGREGATE Revenue BY Department",
+    "output": "SELECT Department, SUM(Revenue) AS Total_Revenue FROM departments GROUP BY Department;"
+  },
+  {
+    "input": "WITH cte_42 AS (SELECT Quantity, OrderID, HireDate, Department, ProductID, Year, CustomerID FROM orders WHERE Department = 'Sales') SELECT Quantity, OrderID, HireDate, Department, ProductID, Year, CustomerID FROM cte_42",
+    "output": "WITH cte_42 AS (SELECT Quantity, OrderID, HireDate, Department, ProductID, Year, CustomerID FROM orders WHERE Department = 'Sales') SELECT Quantity, OrderID, HireDate, Department, ProductID, Year, CustomerID FROM cte_42;"
+  },
+  {
+    "input": "INTERSECT orders AND products",
+    "output": "SELECT * FROM orders INTERSECT SELECT * FROM products;"
+  },
+  {
+    "input": "RENAME products OrderID TO CustomerID",
+    "output": "ALTER TABLE products RENAME COLUMN OrderID TO CustomerID;"
+  },
+  {
+    "input": "GROUP employees BY Price, HireDate, Department",
+    "output": "SELECT Price, HireDate, Department FROM employees GROUP BY Price, HireDate, Department;"
+  },
+  {
+    "input": "JOIN employees AND customers ON employees.Salary = customers.Quantity",
+    "output": "SELECT * FROM employees INNER JOIN customers ON employees.Salary = customers.Quantity;"
+  },
+  {
+    "input": "SELECT CustomerID, Region, Department, HireDate, Salary, ProductID, OrderID, CONCAT(Quantity, ' ', Price) AS HireDate FROM transactions",
+    "output": "SELECT CustomerID, Region, Department, HireDate, Salary, ProductID, OrderID, CONCAT(Quantity, ' ', Price) AS HireDate FROM transactions;"
+  },
+  {
+    "input": "INTERSECT transactions AND sales",
+    "output": "SELECT * FROM transactions INTERSECT SELECT * FROM sales;"
+  },
+  {
+    "input": "LIMIT sales TO 100",
+    "output": "SELECT * FROM sales LIMIT 100;"
+  },
+  {
+    "input": "AVG ProductID FROM employees",
+    "output": "SELECT AVG(ProductID) FROM employees;"
+  },
+  {
+    "input": "SELECT Price, CustomerID, Year, CONCAT(Salary, ' ', Price) AS Price FROM departments",
+    "output": "SELECT Price, CustomerID, Year, CONCAT(Salary, ' ', Price) AS Price FROM departments;"
+  },
+  {
+    "input": "JOIN products AND departments ON products.Year = departments.Department",
+    "output": "SELECT * FROM products INNER JOIN departments ON products.Year = departments.Department;"
+  },
+  {
+    "input": "LIMIT sales TO 20",
+    "output": "SELECT * FROM sales LIMIT 20;"
+  },
+  {
+    "input": "SELECT HireDate, Salary, Department, Price, Quantity, CustomerID, Region, ProductID, ROW_NUMBER() OVER (PARTITION BY Region ORDER BY OrderID) AS row_num FROM departments",
+    "output": "SELECT HireDate, Salary, Department, Price, Quantity, CustomerID, Region, ProductID, ROW_NUMBER() OVER (PARTITION BY Region ORDER BY OrderID) AS row_num FROM departments;"
+  },
+  {
+    "input": "DELETE FROM sales WHERE Department = 'Sales'",
+    "output": "DELETE FROM sales WHERE Department = 'Sales';"
+  },
+  {
+    "input": "RENAME sales Salary TO Year",
+    "output": "ALTER TABLE sales RENAME COLUMN Salary TO Year;"
+  },
+  {
+    "input": "WITH cte_45 AS (SELECT Quantity, Year, OrderID, HireDate, Price, CustomerID, ProductID, Salary FROM employees WHERE Department = 'Sales') SELECT Quantity, Year, OrderID, HireDate, Price, CustomerID, ProductID, Salary FROM cte_45",
+    "output": "WITH cte_45 AS (SELECT Quantity, Year, OrderID, HireDate, Price, CustomerID, ProductID, Salary FROM employees WHERE Department = 'Sales') SELECT Quantity, Year, OrderID, HireDate, Price, CustomerID, ProductID, Salary FROM cte_45;"
+  },
+  {
+    "input": "RENAME orders OrderID TO Salary",
+    "output": "ALTER TABLE orders RENAME COLUMN OrderID TO Salary;"
+  },
+  {
+    "input": "SELECT Quantity, Department, Salary, Year, HireDate, Price, CustomerID, OrderID, ProductID, Region FROM customers WHERE Salary = (SELECT Salary FROM transactions WHERE Department = 'Sales')",
+    "output": "SELECT Quantity, Department, Salary, Year, HireDate, Price, CustomerID, OrderID, ProductID, Region FROM customers WHERE Salary = (SELECT Salary FROM transactions WHERE Department = 'Sales');"
+  },
+  {
+    "input": "DISTINCT Quantity FROM sales",
+    "output": "SELECT DISTINCT Quantity FROM sales;"
+  },
+  {
+    "input": "UNION sales AND orders",
+    "output": "SELECT * FROM sales UNION SELECT * FROM orders;"
+  },
+  {
+    "input": "EXCEPT products AND customers",
+    "output": "SELECT * FROM products EXCEPT SELECT * FROM customers;"
+  },
+  {
+    "input": "UPDATE employees SET Price = 'HR' WHERE Department = 'Sales'",
+    "output": "UPDATE employees SET Price = 'HR' WHERE Department = 'Sales';"
+  },
+  {
+    "input": "SELECT Salary, OrderID, ProductID, CustomerID, Year, HireDate, Region, Price, DATE_TRUNC('day', Price) AS OrderID FROM departments",
+    "output": "SELECT Salary, OrderID, ProductID, CustomerID, Year, HireDate, Region, Price, DATE_TRUNC('day', Price) AS OrderID FROM departments;"
+  },
+  {
+    "input": "FILTER employees WHERE Year = 2023",
+    "output": "SELECT * FROM employees WHERE Year = 2023;"
+  },
+  {
+    "input": "SELECT ProductID, CONCAT(Salary, ' ', ProductID) AS CustomerID FROM orders",
+    "output": "SELECT ProductID, CONCAT(Salary, ' ', ProductID) AS CustomerID FROM orders;"
+  },
+  {
+    "input": "EXCEPT products AND sales",
+    "output": "SELECT * FROM products EXCEPT SELECT * FROM sales;"
+  },
+  {
+    "input": "JOIN sales AND orders ON sales.Quantity = orders.Quantity",
+    "output": "SELECT * FROM sales INNER JOIN orders ON sales.Quantity = orders.Quantity;"
+  },
+  {
+    "input": "MAX CustomerID FROM employees",
+    "output": "SELECT MAX(CustomerID) FROM employees;"
+  },
+  {
+    "input": "SORT customers BY Department ASC",
+    "output": "SELECT * FROM customers ORDER BY Department ASC;"
+  },
+  {
+    "input": "RENAME transactions ProductID TO CustomerID",
+    "output": "ALTER TABLE transactions RENAME COLUMN ProductID TO CustomerID;"
+  },
+  {
+    "input": "HAVING departments WHERE Department = 'Sales'",
+    "output": "SELECT OrderID, Quantity, HireDate, CustomerID, Price, Department, ProductID, Salary, Year FROM departments GROUP BY OrderID, Quantity, HireDate, CustomerID, Price, Department, ProductID, Salary, Year HAVING Department = 'Sales';"
+  },
+  {
+    "input": "COUNT orders WHERE Quantity < 10",
+    "output": "SELECT COUNT(*) FROM orders WHERE Quantity < 10;"
+  },
+  {
+    "input": "JOIN sales AND products ON sales.OrderID = products.Salary AND sales.Region = products.OrderID",
+    "output": "SELECT * FROM sales INNER JOIN products ON sales.OrderID = products.Salary AND sales.Region = products.OrderID;"
+  },
+  {
+    "input": "INTERSECT products AND departments",
+    "output": "SELECT * FROM products INTERSECT SELECT * FROM departments;"
+  },
+  {
+    "input": "SORT transactions BY ProductID DESC",
+    "output": "SELECT * FROM transactions ORDER BY ProductID DESC;"
+  },
+  {
+    "input": "SELECT OrderID, HireDate, Region, CustomerID, Department, Price, ProductID, ROW_NUMBER() OVER (PARTITION BY Price ORDER BY ProductID) AS row_num FROM customers",
+    "output": "SELECT OrderID, HireDate, Region, CustomerID, Department, Price, ProductID, ROW_NUMBER() OVER (PARTITION BY Price ORDER BY ProductID) AS row_num FROM customers;"
+  },
+  {
+    "input": "UNION transactions AND products",
+    "output": "SELECT * FROM transactions UNION SELECT * FROM products;"
+  },
+  {
+    "input": "SORT customers BY Year DESC",
+    "output": "SELECT * FROM customers ORDER BY Year DESC;"
+  },
+  {
+    "input": "FILTER departments WHERE Region IN (SELECT Region FROM employees WHERE Salary > 50000)",
+    "output": "SELECT * FROM departments WHERE Region IN (SELECT Region FROM employees WHERE Salary > 50000);"
+  },
+  {
+    "input": "FILTER customers WHERE Salary IN (SELECT Salary FROM products WHERE Region = 'North')",
+    "output": "SELECT * FROM customers WHERE Salary IN (SELECT Salary FROM products WHERE Region = 'North');"
+  },
+  {
+    "input": "DISTINCT ProductID FROM employees",
+    "output": "SELECT DISTINCT ProductID FROM employees;"
+  },
+  {
+    "input": "AVG HireDate FROM customers",
+    "output": "SELECT AVG(HireDate) FROM customers;"
+  },
+  {
+    "input": "UPDATE sales SET Quantity = 10000 WHERE Department = 'Sales'",
+    "output": "UPDATE sales SET Quantity = 10000 WHERE Department = 'Sales';"
+  },
+  {
+    "input": "JOIN departments AND sales ON departments.Price = sales.Region AND departments.Year = sales.ProductID",
+    "output": "SELECT * FROM departments INNER JOIN sales ON departments.Price = sales.Region AND departments.Year = sales.ProductID;"
+  },
+  {
+    "input": "JOIN customers AND employees ON customers.Salary = employees.Year",
+    "output": "SELECT * FROM customers INNER JOIN employees ON customers.Salary = employees.Year;"
+  },
+  {
+    "input": "AGGREGATE Sales BY Year, Region",
+    "output": "SELECT Year, Region, COUNT(Sales) AS Total_Sales FROM orders GROUP BY Year, Region;"
+  },
+  {
+    "input": "SELECT Department, Year, CustomerID, Salary, Price, ROW_NUMBER() OVER (PARTITION BY HireDate ORDER BY ProductID) AS row_num FROM sales",
+    "output": "SELECT Department, Year, CustomerID, Salary, Price, ROW_NUMBER() OVER (PARTITION BY HireDate ORDER BY ProductID) AS row_num FROM sales;"
+  },
+  {
+    "input": "SORT transactions BY Salary ASC",
+    "output": "SELECT * FROM transactions ORDER BY Salary ASC;"
+  },
+  {
+    "input": "JOIN departments AND transactions ON departments.Price = transactions.CustomerID AND departments.HireDate = transactions.OrderID",
+    "output": "SELECT * FROM departments INNER JOIN transactions ON departments.Price = transactions.CustomerID AND departments.HireDate = transactions.OrderID;"
+  },
+  {
+    "input": "SELECT Region, Year, CustomerID, OrderID, HireDate, CASE WHEN Department = 'Sales' THEN 'HR' ELSE 10000 END AS ProductID FROM employees",
+    "output": "SELECT Region, Year, CustomerID, OrderID, HireDate, CASE WHEN Department = 'Sales' THEN 'HR' ELSE 10000 END AS ProductID FROM employees;"
+  },
+  {
+    "input": "FILTER customers WHERE Year = 2023",
+    "output": "SELECT * FROM customers WHERE Year = 2023;"
+  },
+  {
+    "input": "SELECT Salary, CustomerID, CASE WHEN Region = 'North' THEN 'HR' ELSE 10000 END AS Price FROM sales",
+    "output": "SELECT Salary, CustomerID, CASE WHEN Region = 'North' THEN 'HR' ELSE 10000 END AS Price FROM sales;"
+  },
+  {
+    "input": "SELECT OrderID, CASE WHEN Department = 'Sales' THEN 'HR' ELSE 'HR' END AS ProductID FROM transactions",
+    "output": "SELECT OrderID, CASE WHEN Department = 'Sales' THEN 'HR' ELSE 'HR' END AS ProductID FROM transactions;"
+  },
+  {
+    "input": "SELECT OrderID, Region FROM products WHERE Quantity = (SELECT Quantity FROM sales WHERE Year = 2023)",
+    "output": "SELECT OrderID, Region FROM products WHERE Quantity = (SELECT Quantity FROM sales WHERE Year = 2023);"
+  },
+  {
+    "input": "JOIN employees AND departments ON employees.Price = departments.Department AND employees.OrderID = departments.ProductID",
+    "output": "SELECT * FROM employees INNER JOIN departments ON employees.Price = departments.Department AND employees.OrderID = departments.ProductID;"
+  },
+  {
+    "input": "UPDATE departments SET Region = 10000 WHERE Quantity < 10",
+    "output": "UPDATE departments SET Region = 10000 WHERE Quantity < 10;"
+  },
+  {
+    "input": "COUNT orders WHERE Region = 'North'",
+    "output": "SELECT COUNT(*) FROM orders WHERE Region = 'North';"
+  },
+  {
+    "input": "WITH cte_6 AS (SELECT OrderID, Salary, Year, CustomerID FROM employees WHERE Year = 2023) SELECT OrderID, Salary, Year, CustomerID FROM cte_6",
+    "output": "WITH cte_6 AS (SELECT OrderID, Salary, Year, CustomerID FROM employees WHERE Year = 2023) SELECT OrderID, Salary, Year, CustomerID FROM cte_6;"
+  },
+  {
+    "input": "SELECT CustomerID, Year, OrderID, Price, Department, Quantity, HireDate, Region, ProductID, Salary, ROW_NUMBER() OVER (PARTITION BY Salary ORDER BY Price) AS row_num FROM orders",
+    "output": "SELECT CustomerID, Year, OrderID, Price, Department, Quantity, HireDate, Region, ProductID, Salary, ROW_NUMBER() OVER (PARTITION BY Salary ORDER BY Price) AS row_num FROM orders;"
+  },
+  {
+    "input": "COUNT transactions WHERE Quantity < 10",
+    "output": "SELECT COUNT(*) FROM transactions WHERE Quantity < 10;"
+  },
+  {
+    "input": "SORT sales BY ProductID ASC",
+    "output": "SELECT * FROM sales ORDER BY ProductID ASC;"
+  },
+  {
+    "input": "UNION products AND customers",
+    "output": "SELECT * FROM products UNION SELECT * FROM customers;"
+  },
+  {
+    "input": "UPDATE employees SET Quantity = 10000 WHERE Department = 'Sales'",
+    "output": "UPDATE employees SET Quantity = 10000 WHERE Department = 'Sales';"
+  },
+  {
+    "input": "MIN Price FROM departments",
+    "output": "SELECT MIN(Price) FROM departments;"
+  },
+  {
+    "input": "GROUP transactions BY ProductID, Region, OrderID, HireDate, CustomerID, Year",
+    "output": "SELECT ProductID, Region, OrderID, HireDate, CustomerID, Year FROM transactions GROUP BY ProductID, Region, OrderID, HireDate, CustomerID, Year;"
+  },
+  {
+    "input": "DISTINCT HireDate FROM transactions",
+    "output": "SELECT DISTINCT HireDate FROM transactions;"
+  },
+  {
+    "input": "SORT sales BY CustomerID ASC",
+    "output": "SELECT * FROM sales ORDER BY CustomerID ASC;"
+  },
+  {
+    "input": "RENAME sales CustomerID TO ProductID",
+    "output": "ALTER TABLE sales RENAME COLUMN CustomerID TO ProductID;"
+  },
+  {
+    "input": "LIMIT products TO 100",
+    "output": "SELECT * FROM products LIMIT 100;"
+  },
+  {
+    "input": "COUNT employees WHERE Salary > 50000",
+    "output": "SELECT COUNT(*) FROM employees WHERE Salary > 50000;"
+  },
+  {
+    "input": "JOIN products AND orders ON products.Department = orders.Year AND products.Salary = orders.ProductID",
+    "output": "SELECT * FROM products INNER JOIN orders ON products.Department = orders.Year AND products.Salary = orders.ProductID;"
+  },
+  {
+    "input": "GROUP orders BY Department, Year, ProductID, Price, HireDate, Region, Quantity, Salary",
+    "output": "SELECT Department, Year, ProductID, Price, HireDate, Region, Quantity, Salary FROM orders GROUP BY Department, Year, ProductID, Price, HireDate, Region, Quantity, Salary;"
+  },
+  {
+    "input": "COUNT orders WHERE Department = 'Sales'",
+    "output": "SELECT COUNT(*) FROM orders WHERE Department = 'Sales';"
+  },
+  {
+    "input": "DELETE FROM transactions WHERE Region = 'North'",
+    "output": "DELETE FROM transactions WHERE Region = 'North';"
+  },
+  {
+    "input": "WITH cte_73 AS (SELECT Quantity, Salary, CustomerID, Price, OrderID, Year, ProductID, HireDate FROM sales WHERE Year = 2023) SELECT Quantity, Salary, CustomerID, Price, OrderID, Year, ProductID, HireDate FROM cte_73",
+    "output": "WITH cte_73 AS (SELECT Quantity, Salary, CustomerID, Price, OrderID, Year, ProductID, HireDate FROM sales WHERE Year = 2023) SELECT Quantity, Salary, CustomerID, Price, OrderID, Year, ProductID, HireDate FROM cte_73;"
+  },
+  {
+    "input": "DISTINCT Department FROM products",
+    "output": "SELECT DISTINCT Department FROM products;"
+  },
+  {
+    "input": "FILTER sales WHERE Year = 2023",
+    "output": "SELECT * FROM sales WHERE Year = 2023;"
+  },
+  {
+    "input": "SELECT HireDate, Salary, CustomerID, Region, ProductID, Year FROM employees WHERE Region = 'North'",
+    "output": "SELECT HireDate, Salary, CustomerID, Region, ProductID, Year FROM employees WHERE Region = 'North';"
+  },
+  {
+    "input": "WITH cte_61 AS (SELECT OrderID, HireDate, Quantity, Region, Price, Salary, Department, Year, ProductID, CustomerID FROM orders WHERE Department = 'Sales') SELECT OrderID, HireDate, Quantity, Region, Price, Salary, Department, Year, ProductID, CustomerID FROM cte_61",
+    "output": "WITH cte_61 AS (SELECT OrderID, HireDate, Quantity, Region, Price, Salary, Department, Year, ProductID, CustomerID FROM orders WHERE Department = 'Sales') SELECT OrderID, HireDate, Quantity, Region, Price, Salary, Department, Year, ProductID, CustomerID FROM cte_61;"
+  },
+  {
+    "input": "SUM Department FROM employees",
+    "output": "SELECT SUM(Department) FROM employees;"
+  },
+  {
+    "input": "SELECT Year, Region, Department, Quantity, HireDate, Price, ProductID, Salary, OrderID, CONCAT(Price, ' ', Quantity) AS Region FROM products",
+    "output": "SELECT Year, Region, Department, Quantity, HireDate, Price, ProductID, Salary, OrderID, CONCAT(Price, ' ', Quantity) AS Region FROM products;"
+  },
+  {
+    "input": "SUM CustomerID FROM orders",
+    "output": "SELECT SUM(CustomerID) FROM orders;"
+  },
+  {
+    "input": "AVG Salary FROM transactions",
+    "output": "SELECT AVG(Salary) FROM transactions;"
+  },
+  {
+    "input": "SELECT Salary, ProductID, HireDate, Quantity, Department, CASE WHEN Quantity < 10 THEN 'HR' ELSE 2023 END AS HireDate FROM departments",
+    "output": "SELECT Salary, ProductID, HireDate, Quantity, Department, CASE WHEN Quantity < 10 THEN 'HR' ELSE 2023 END AS HireDate FROM departments;"
+  },
+  {
+    "input": "EXCEPT employees AND products",
+    "output": "SELECT * FROM employees EXCEPT SELECT * FROM products;"
+  },
+  {
+    "input": "JOIN transactions AND products ON transactions.CustomerID = products.Price",
+    "output": "SELECT * FROM transactions INNER JOIN products ON transactions.CustomerID = products.Price;"
+  },
+  {
+    "input": "SORT transactions BY Salary DESC",
+    "output": "SELECT * FROM transactions ORDER BY Salary DESC;"
+  },
+  {
+    "input": "SORT employees BY CustomerID ASC",
+    "output": "SELECT * FROM employees ORDER BY CustomerID ASC;"
+  },
+  {
+    "input": "WITH cte_76 AS (SELECT Price FROM departments WHERE Year = 2023) SELECT Price FROM cte_76",
+    "output": "WITH cte_76 AS (SELECT Price FROM departments WHERE Year = 2023) SELECT Price FROM cte_76;"
+  },
+  {
+    "input": "SELECT ProductID, Quantity, Year, CustomerID, Department FROM products WHERE Year = 2023",
+    "output": "SELECT ProductID, Quantity, Year, CustomerID, Department FROM products WHERE Year = 2023;"
+  },
+  {
+    "input": "DISTINCT Year FROM sales",
+    "output": "SELECT DISTINCT Year FROM sales;"
+  },
+  {
+    "input": "MIN OrderID FROM products",
+    "output": "SELECT MIN(OrderID) FROM products;"
+  },
+  {
+    "input": "SELECT OrderID, Salary, Year, CustomerID, Price, ROW_NUMBER() OVER (PARTITION BY OrderID ORDER BY Price) AS row_num FROM employees",
+    "output": "SELECT OrderID, Salary, Year, CustomerID, Price, ROW_NUMBER() OVER (PARTITION BY OrderID ORDER BY Price) AS row_num FROM employees;"
+  },
+  {
+    "input": "SELECT Department FROM orders WHERE HireDate = (SELECT HireDate FROM customers WHERE Region = 'North')",
+    "output": "SELECT Department FROM orders WHERE HireDate = (SELECT HireDate FROM customers WHERE Region = 'North');"
+  },
+  {
+    "input": "DISTINCT Quantity FROM sales",
+    "output": "SELECT DISTINCT Quantity FROM sales;"
+  },
+  {
+    "input": "DISTINCT Price FROM customers",
+    "output": "SELECT DISTINCT Price FROM customers;"
+  },
+  {
+    "input": "LIMIT departments TO 20",
+    "output": "SELECT * FROM departments LIMIT 20;"
+  },
+  {
+    "input": "FILTER products WHERE Region = 'North'",
+    "output": "SELECT * FROM products WHERE Region = 'North';"
+  },
+  {
+    "input": "UNION customers AND transactions",
+    "output": "SELECT * FROM customers UNION SELECT * FROM transactions;"
+  },
+  {
+    "input": "COUNT sales WHERE Quantity < 10",
+    "output": "SELECT COUNT(*) FROM sales WHERE Quantity < 10;"
+  },
+  {
+    "input": "MIN Salary FROM employees",
+    "output": "SELECT MIN(Salary) FROM employees;"
+  },
+  {
+    "input": "MIN Price FROM orders",
+    "output": "SELECT MIN(Price) FROM orders;"
+  },
+  {
+    "input": "SELECT Price, Salary, CustomerID, Year, ROW_NUMBER() OVER (PARTITION BY Salary ORDER BY Salary) AS row_num FROM sales",
+    "output": "SELECT Price, Salary, CustomerID, Year, ROW_NUMBER() OVER (PARTITION BY Salary ORDER BY Salary) AS row_num FROM sales;"
+  },
+  {
+    "input": "MAX OrderID FROM products",
+    "output": "SELECT MAX(OrderID) FROM products;"
+  },
+  {
+    "input": "MIN HireDate FROM customers",
+    "output": "SELECT MIN(HireDate) FROM customers;"
+  },
+  {
+    "input": "WITH cte_77 AS (SELECT ProductID, Salary FROM sales WHERE Region = 'North') SELECT ProductID, Salary FROM cte_77",
+    "output": "WITH cte_77 AS (SELECT ProductID, Salary FROM sales WHERE Region = 'North') SELECT ProductID, Salary FROM cte_77;"
+  },
+  {
+    "input": "JOIN orders AND employees ON orders.Salary = employees.Quantity AND orders.Year = employees.ProductID",
+    "output": "SELECT * FROM orders INNER JOIN employees ON orders.Salary = employees.Quantity AND orders.Year = employees.ProductID;"
+  },
+  {
+    "input": "DISTINCT Department FROM customers",
+    "output": "SELECT DISTINCT Department FROM customers;"
+  },
+  {
+    "input": "SELECT Year, HireDate, Region, CustomerID, Department, ProductID FROM orders WHERE ProductID = (SELECT ProductID FROM transactions WHERE Region = 'North')",
+    "output": "SELECT Year, HireDate, Region, CustomerID, Department, ProductID FROM orders WHERE ProductID = (SELECT ProductID FROM transactions WHERE Region = 'North');"
+  },
+  {
+    "input": "AGGREGATE Revenue BY Region, Year, Department",
+    "output": "SELECT Region, Year, Department, MIN(Revenue) AS Total_Profit FROM departments GROUP BY Region, Year, Department;"
+  },
+  {
+    "input": "UNION customers AND orders",
+    "output": "SELECT * FROM customers UNION SELECT * FROM orders;"
+  },
+  {
+    "input": "SELECT Region, Department, Price, Year, Salary, OrderID, HireDate, CustomerID, DATE_TRUNC('day', ProductID) AS Region FROM products",
+    "output": "SELECT Region, Department, Price, Year, Salary, OrderID, HireDate, CustomerID, DATE_TRUNC('day', ProductID) AS Region FROM products;"
+  },
+  {
+    "input": "UNION orders AND transactions",
+    "output": "SELECT * FROM orders UNION SELECT * FROM transactions;"
+  },
+  {
+    "input": "RENAME transactions Price TO Region",
+    "output": "ALTER TABLE transactions RENAME COLUMN Price TO Region;"
+  },
+  {
+    "input": "UPDATE sales SET OrderID = 'HR' WHERE Region = 'North'",
+    "output": "UPDATE sales SET OrderID = 'HR' WHERE Region = 'North';"
+  },
+  {
+    "input": "UNION sales AND orders",
+    "output": "SELECT * FROM sales UNION SELECT * FROM orders;"
+  },
+  {
+    "input": "JOIN transactions AND transactions ON transactions.ProductID = transactions.Region AND transactions.CustomerID = transactions.HireDate",
+    "output": "SELECT * FROM transactions INNER JOIN transactions ON transactions.ProductID = transactions.Region AND transactions.CustomerID = transactions.HireDate;"
+  },
+  {
+    "input": "UNION transactions AND orders",
+    "output": "SELECT * FROM transactions UNION SELECT * FROM orders;"
+  },
+  {
+    "input": "JOIN customers AND products ON customers.Price = products.HireDate",
+    "output": "SELECT * FROM customers INNER JOIN products ON customers.Price = products.HireDate;"
+  },
+  {
+    "input": "UNION transactions AND products",
+    "output": "SELECT * FROM transactions UNION SELECT * FROM products;"
+  },
+  {
+    "input": "DISTINCT Department FROM transactions",
+    "output": "SELECT DISTINCT Department FROM transactions;"
+  },
+  {
+    "input": "JOIN customers AND transactions ON customers.CustomerID = transactions.Salary AND customers.OrderID = transactions.Quantity",
+    "output": "SELECT * FROM customers INNER JOIN transactions ON customers.CustomerID = transactions.Salary AND customers.OrderID = transactions.Quantity;"
+  },
+  {
+    "input": "DELETE FROM transactions WHERE Salary > 50000",
+    "output": "DELETE FROM transactions WHERE Salary > 50000;"
+  },
+  {
+    "input": "HAVING departments WHERE Quantity < 10",
+    "output": "SELECT HireDate FROM departments GROUP BY HireDate HAVING Quantity < 10;"
+  },
+  {
+    "input": "SELECT Price, ProductID, Salary, Quantity, CustomerID, Region, ROW_NUMBER() OVER (PARTITION BY Salary ORDER BY Price) AS row_num FROM sales",
+    "output": "SELECT Price, ProductID, Salary, Quantity, CustomerID, Region, ROW_NUMBER() OVER (PARTITION BY Salary ORDER BY Price) AS row_num FROM sales;"
+  },
+  {
+    "input": "GROUP customers BY Price, Region, Year, OrderID, Salary, Department",
+    "output": "SELECT Price, Region, Year, OrderID, Salary, Department FROM customers GROUP BY Price, Region, Year, OrderID, Salary, Department;"
+  },
+  {
+    "input": "SORT products BY Region DESC",
+    "output": "SELECT * FROM products ORDER BY Region DESC;"
+  },
+  {
+    "input": "SELECT Department, CustomerID, ProductID, Salary, OrderID, HireDate, Price FROM employees WHERE Year = (SELECT Year FROM products WHERE Quantity < 10)",
+    "output": "SELECT Department, CustomerID, ProductID, Salary, OrderID, HireDate, Price FROM employees WHERE Year = (SELECT Year FROM products WHERE Quantity < 10);"
+  },
+  {
+    "input": "GROUP employees BY Quantity, Salary, Price, Department, Region, HireDate, OrderID, ProductID, Year, CustomerID",
+    "output": "SELECT Quantity, Salary, Price, Department, Region, HireDate, OrderID, ProductID, Year, CustomerID FROM employees GROUP BY Quantity, Salary, Price, Department, Region, HireDate, OrderID, ProductID, Year, CustomerID;"
+  },
+  {
+    "input": "RENAME customers Region TO HireDate",
+    "output": "ALTER TABLE customers RENAME COLUMN Region TO HireDate;"
+  },
+  {
+    "input": "AVG Quantity FROM products",
+    "output": "SELECT AVG(Quantity) FROM products;"
+  },
+  {
+    "input": "DELETE FROM customers WHERE Department = 'Sales'",
+    "output": "DELETE FROM customers WHERE Department = 'Sales';"
+  },
+  {
+    "input": "SELECT Department, ProductID, Year, Price, CustomerID, OrderID, Region, HireDate, Quantity, Salary FROM products WHERE Department = 'Sales'",
+    "output": "SELECT Department, ProductID, Year, Price, CustomerID, OrderID, Region, HireDate, Quantity, Salary FROM products WHERE Department = 'Sales';"
+  },
+  {
+    "input": "SUM Salary FROM transactions",
+    "output": "SELECT SUM(Salary) FROM transactions;"
+  },
+  {
+    "input": "JOIN sales AND departments ON sales.CustomerID = departments.Region AND sales.OrderID = departments.Year",
+    "output": "SELECT * FROM sales INNER JOIN departments ON sales.CustomerID = departments.Region AND sales.OrderID = departments.Year;"
+  },
+  {
+    "input": "INTERSECT customers AND sales",
+    "output": "SELECT * FROM customers INTERSECT SELECT * FROM sales;"
+  },
+  {
+    "input": "LIMIT transactions TO 50",
+    "output": "SELECT * FROM transactions LIMIT 50;"
+  },
+  {
+    "input": "WITH cte_96 AS (SELECT Salary, Region, Quantity, CustomerID, OrderID, HireDate, Year, Price FROM products WHERE Quantity < 10) SELECT Salary, Region, Quantity, CustomerID, OrderID, HireDate, Year, Price FROM cte_96",
+    "output": "WITH cte_96 AS (SELECT Salary, Region, Quantity, CustomerID, OrderID, HireDate, Year, Price FROM products WHERE Quantity < 10) SELECT Salary, Region, Quantity, CustomerID, OrderID, HireDate, Year, Price FROM cte_96;"
+  },
+  {
+    "input": "UNION orders AND products",
+    "output": "SELECT * FROM orders UNION SELECT * FROM products;"
+  },
+  {
+    "input": "SELECT Region, ProductID, HireDate, ROW_NUMBER() OVER (PARTITION BY Price ORDER BY OrderID) AS row_num FROM orders",
+    "output": "SELECT Region, ProductID, HireDate, ROW_NUMBER() OVER (PARTITION BY Price ORDER BY OrderID) AS row_num FROM orders;"
+  },
+  {
+    "input": "LIMIT products TO 10",
+    "output": "SELECT * FROM products LIMIT 10;"
+  },
+  {
+    "input": "DELETE FROM customers WHERE Region = 'North'",
+    "output": "DELETE FROM customers WHERE Region = 'North';"
+  },
+  {
+    "input": "DISTINCT Region FROM sales",
+    "output": "SELECT DISTINCT Region FROM sales;"
+  },
+  {
+    "input": "FILTER transactions WHERE CustomerID IN (SELECT CustomerID FROM orders WHERE Region = 'North')",
+    "output": "SELECT * FROM transactions WHERE CustomerID IN (SELECT CustomerID FROM orders WHERE Region = 'North');"
+  },
+  {
+    "input": "SELECT Price, Department, ProductID, HireDate, CustomerID, Year, Salary, Quantity, OrderID, ROW_NUMBER() OVER (PARTITION BY Region ORDER BY Price) AS row_num FROM orders",
+    "output": "SELECT Price, Department, ProductID, HireDate, CustomerID, Year, Salary, Quantity, OrderID, ROW_NUMBER() OVER (PARTITION BY Region ORDER BY Price) AS row_num FROM orders;"
+  },
+  {
+    "input": "AVG Region FROM departments",
+    "output": "SELECT AVG(Region) FROM departments;"
+  },
+  {
+    "input": "SUM Department FROM transactions",
+    "output": "SELECT SUM(Department) FROM transactions;"
+  },
+  {
+    "input": "RENAME customers Department TO ProductID",
+    "output": "ALTER TABLE customers RENAME COLUMN Department TO ProductID;"
+  },
+  {
+    "input": "MAX Price FROM products",
+    "output": "SELECT MAX(Price) FROM products;"
+  },
+  {
+    "input": "AGGREGATE Revenue BY Department",
+    "output": "SELECT Department, MAX(Revenue) AS Total_Sales FROM transactions GROUP BY Department;"
+  },
+  {
+    "input": "INTERSECT departments AND customers",
+    "output": "SELECT * FROM departments INTERSECT SELECT * FROM customers;"
+  },
+  {
+    "input": "DISTINCT Salary FROM orders",
+    "output": "SELECT DISTINCT Salary FROM orders;"
+  },
+  {
+    "input": "MAX Salary FROM orders",
+    "output": "SELECT MAX(Salary) FROM orders;"
+  },
+  {
+    "input": "UPDATE customers SET Salary = 'HR' WHERE Salary > 50000",
+    "output": "UPDATE customers SET Salary = 'HR' WHERE Salary > 50000;"
+  },
+  {
+    "input": "WITH cte_96 AS (SELECT Price, OrderID, CustomerID, ProductID FROM orders WHERE Year = 2023) SELECT Price, OrderID, CustomerID, ProductID FROM cte_96",
+    "output": "WITH cte_96 AS (SELECT Price, OrderID, CustomerID, ProductID FROM orders WHERE Year = 2023) SELECT Price, OrderID, CustomerID, ProductID FROM cte_96;"
+  },
+  {
+    "input": "HAVING customers WHERE Region = 'North'",
+    "output": "SELECT Salary, Quantity, Price, CustomerID, OrderID, Department, Region, HireDate, Year, ProductID FROM customers GROUP BY Salary, Quantity, Price, CustomerID, OrderID, Department, Region, HireDate, Year, ProductID HAVING Region = 'North';"
+  },
+  {
+    "input": "SELECT Quantity, Region, Price, HireDate, Salary, Year, Department, ROW_NUMBER() OVER (PARTITION BY ProductID ORDER BY CustomerID) AS row_num FROM orders",
+    "output": "SELECT Quantity, Region, Price, HireDate, Salary, Year, Department, ROW_NUMBER() OVER (PARTITION BY ProductID ORDER BY CustomerID) AS row_num FROM orders;"
+  },
+  {
+    "input": "MIN Salary FROM transactions",
+    "output": "SELECT MIN(Salary) FROM transactions;"
+  },
+  {
+    "input": "INTERSECT customers AND customers",
+    "output": "SELECT * FROM customers INTERSECT SELECT * FROM customers;"
+  },
+  {
+    "input": "WITH cte_7 AS (SELECT Salary FROM transactions WHERE Quantity < 10) SELECT Salary FROM cte_7",
+    "output": "WITH cte_7 AS (SELECT Salary FROM transactions WHERE Quantity < 10) SELECT Salary FROM cte_7;"
+  },
+  {
+    "input": "AGGREGATE Revenue BY Region",
+    "output": "SELECT Region, MAX(Revenue) AS Total_Profit FROM orders GROUP BY Region;"
+  },
+  {
+    "input": "EXCEPT employees AND customers",
+    "output": "SELECT * FROM employees EXCEPT SELECT * FROM customers;"
+  },
+  {
+    "input": "SELECT Price, Year, ROW_NUMBER() OVER (PARTITION BY Department ORDER BY Salary) AS row_num FROM sales",
+    "output": "SELECT Price, Year, ROW_NUMBER() OVER (PARTITION BY Department ORDER BY Salary) AS row_num FROM sales;"
+  },
+  {
+    "input": "AVG Year FROM employees",
+    "output": "SELECT AVG(Year) FROM employees;"
+  },
+  {
+    "input": "SORT products BY Year DESC",
+    "output": "SELECT * FROM products ORDER BY Year DESC;"
+  },
+  {
+    "input": "JOIN sales AND employees ON sales.Price = employees.OrderID",
+    "output": "SELECT * FROM sales INNER JOIN employees ON sales.Price = employees.OrderID;"
+  },
+  {
+    "input": "SELECT Year, Department, ProductID, DATE_TRUNC('month', Salary) AS Department FROM customers",
+    "output": "SELECT Year, Department, ProductID, DATE_TRUNC('month', Salary) AS Department FROM customers;"
+  },
+  {
+    "input": "DISTINCT Salary FROM employees",
+    "output": "SELECT DISTINCT Salary FROM employees;"
+  },
+  {
+    "input": "AGGREGATE Sales BY Region",
+    "output": "SELECT Region, AVG(Sales) AS Total_Sales FROM sales GROUP BY Region;"
+  },
+  {
+    "input": "SELECT Department, OrderID, ProductID, Quantity, HireDate, Region, Price, Year, CustomerID, Salary, CASE WHEN Region = 'North' THEN 2023 ELSE 10000 END AS Salary FROM products",
+    "output": "SELECT Department, OrderID, ProductID, Quantity, HireDate, Region, Price, Year, CustomerID, Salary, CASE WHEN Region = 'North' THEN 2023 ELSE 10000 END AS Salary FROM products;"
+  },
+  {
+    "input": "FILTER orders WHERE OrderID IN (SELECT OrderID FROM products WHERE Department = 'Sales')",
+    "output": "SELECT * FROM orders WHERE OrderID IN (SELECT OrderID FROM products WHERE Department = 'Sales');"
+  },
+  {
+    "input": "UPDATE transactions SET Price = 10000 WHERE Salary > 50000",
+    "output": "UPDATE transactions SET Price = 10000 WHERE Salary > 50000;"
+  },
+  {
+    "input": "SELECT Quantity, CustomerID FROM products WHERE Department = 'Sales'",
+    "output": "SELECT Quantity, CustomerID FROM products WHERE Department = 'Sales';"
+  },
+  {
+    "input": "SELECT Quantity, CONCAT(Price, ' ', HireDate) AS CustomerID FROM employees",
+    "output": "SELECT Quantity, CONCAT(Price, ' ', HireDate) AS CustomerID FROM employees;"
+  },
+  {
+    "input": "FILTER customers WHERE ProductID IN (SELECT ProductID FROM products WHERE Quantity < 10)",
+    "output": "SELECT * FROM customers WHERE ProductID IN (SELECT ProductID FROM products WHERE Quantity < 10);"
+  },
+  {
+    "input": "DISTINCT HireDate FROM sales",
+    "output": "SELECT DISTINCT HireDate FROM sales;"
+  },
+  {
+    "input": "UPDATE products SET CustomerID = 10000 WHERE Year = 2023",
+    "output": "UPDATE products SET CustomerID = 10000 WHERE Year = 2023;"
+  },
+  {
+    "input": "LIMIT employees TO 50",
+    "output": "SELECT * FROM employees LIMIT 50;"
+  },
+  {
+    "input": "UNION departments AND sales",
+    "output": "SELECT * FROM departments UNION SELECT * FROM sales;"
+  },
+  {
+    "input": "SELECT Salary, Quantity FROM departments WHERE OrderID = (SELECT OrderID FROM customers WHERE Salary > 50000)",
+    "output": "SELECT Salary, Quantity FROM departments WHERE OrderID = (SELECT OrderID FROM customers WHERE Salary > 50000);"
+  },
+  {
+    "input": "SELECT Year, Price, Quantity, HireDate, CustomerID, Region, OrderID, CONCAT(HireDate, ' ', Department) AS OrderID FROM sales",
+    "output": "SELECT Year, Price, Quantity, HireDate, CustomerID, Region, OrderID, CONCAT(HireDate, ' ', Department) AS OrderID FROM sales;"
+  },
+  {
+    "input": "GROUP employees BY Quantity, Salary, ProductID, Year, OrderID, Department, CustomerID, HireDate",
+    "output": "SELECT Quantity, Salary, ProductID, Year, OrderID, Department, CustomerID, HireDate FROM employees GROUP BY Quantity, Salary, ProductID, Year, OrderID, Department, CustomerID, HireDate;"
+  },
+  {
+    "input": "DISTINCT Department FROM sales",
+    "output": "SELECT DISTINCT Department FROM sales;"
+  },
+  {
+    "input": "MAX HireDate FROM departments",
+    "output": "SELECT MAX(HireDate) FROM departments;"
+  },
+  {
+    "input": "SELECT ProductID, Quantity, Year, HireDate, CustomerID, CASE WHEN Department = 'Sales' THEN 2023 ELSE 10000 END AS Price FROM departments",
+    "output": "SELECT ProductID, Quantity, Year, HireDate, CustomerID, CASE WHEN Department = 'Sales' THEN 2023 ELSE 10000 END AS Price FROM departments;"
+  },
+  {
+    "input": "SELECT Department, Region, Year, CustomerID, ROW_NUMBER() OVER (PARTITION BY Quantity ORDER BY Department) AS row_num FROM employees",
+    "output": "SELECT Department, Region, Year, CustomerID, ROW_NUMBER() OVER (PARTITION BY Quantity ORDER BY Department) AS row_num FROM employees;"
+  },
+  {
+    "input": "SELECT OrderID, Year, CONCAT(Region, ' ', Quantity) AS OrderID FROM employees",
+    "output": "SELECT OrderID, Year, CONCAT(Region, ' ', Quantity) AS OrderID FROM employees;"
+  },
+  {
+    "input": "AGGREGATE Sales BY Region, Department, Year",
+    "output": "SELECT Region, Department, Year, AVG(Sales) AS Total_Revenue FROM transactions GROUP BY Region, Department, Year;"
+  },
+  {
+    "input": "HAVING products WHERE Year = 2023",
+    "output": "SELECT Department, Year, ProductID, CustomerID, HireDate, Salary, Price, OrderID, Region FROM products GROUP BY Department, Year, ProductID, CustomerID, HireDate, Salary, Price, OrderID, Region HAVING Year = 2023;"
+  },
+  {
+    "input": "UNION departments AND sales",
+    "output": "SELECT * FROM departments UNION SELECT * FROM sales;"
+  },
+  {
+    "input": "FILTER sales WHERE CustomerID IN (SELECT CustomerID FROM sales WHERE Department = 'Sales')",
+    "output": "SELECT * FROM sales WHERE CustomerID IN (SELECT CustomerID FROM sales WHERE Department = 'Sales');"
+  },
+  {
+    "input": "SELECT Quantity, Department, Year, HireDate, OrderID, Region, ProductID FROM transactions WHERE Salary > 50000",
+    "output": "SELECT Quantity, Department, Year, HireDate, OrderID, Region, ProductID FROM transactions WHERE Salary > 50000;"
+  },
+  {
+    "input": "RENAME orders Region TO Region",
+    "output": "ALTER TABLE orders RENAME COLUMN Region TO Region;"
+  },
+  {
+    "input": "WITH cte_10 AS (SELECT HireDate, ProductID, Price, OrderID, Department, Salary, Region, Year, CustomerID FROM employees WHERE Quantity < 10) SELECT HireDate, ProductID, Price, OrderID, Department, Salary, Region, Year, CustomerID FROM cte_10",
+    "output": "WITH cte_10 AS (SELECT HireDate, ProductID, Price, OrderID, Department, Salary, Region, Year, CustomerID FROM employees WHERE Quantity < 10) SELECT HireDate, ProductID, Price, OrderID, Department, Salary, Region, Year, CustomerID FROM cte_10;"
+  },
+  {
+    "input": "EXCEPT orders AND sales",
+    "output": "SELECT * FROM orders EXCEPT SELECT * FROM sales;"
+  },
+  {
+    "input": "DELETE FROM products WHERE Quantity < 10",
+    "output": "DELETE FROM products WHERE Quantity < 10;"
+  },
+  {
+    "input": "WITH cte_78 AS (SELECT OrderID, HireDate, Region, Price, CustomerID, Quantity, Salary, Year FROM orders WHERE Region = 'North') SELECT OrderID, HireDate, Region, Price, CustomerID, Quantity, Salary, Year FROM cte_78",
+    "output": "WITH cte_78 AS (SELECT OrderID, HireDate, Region, Price, CustomerID, Quantity, Salary, Year FROM orders WHERE Region = 'North') SELECT OrderID, HireDate, Region, Price, CustomerID, Quantity, Salary, Year FROM cte_78;"
+  },
+  {
+    "input": "SELECT CustomerID, HireDate, Year, ProductID, Region, Salary, OrderID, Department, Price, Quantity FROM orders WHERE Salary > 50000",
+    "output": "SELECT CustomerID, HireDate, Year, ProductID, Region, Salary, OrderID, Department, Price, Quantity FROM orders WHERE Salary > 50000;"
+  },
+  {
+    "input": "UNION orders AND transactions",
+    "output": "SELECT * FROM orders UNION SELECT * FROM transactions;"
+  },
+  {
+    "input": "COUNT orders WHERE Region = 'North'",
+    "output": "SELECT COUNT(*) FROM orders WHERE Region = 'North';"
+  },
+  {
+    "input": "SELECT Salary, Region, ProductID, Department, HireDate, CustomerID FROM products WHERE Region = 'North'",
+    "output": "SELECT Salary, Region, ProductID, Department, HireDate, CustomerID FROM products WHERE Region = 'North';"
+  },
+  {
+    "input": "GROUP products BY Quantity, HireDate, Region, Price, Year, CustomerID, ProductID, OrderID, Salary",
+    "output": "SELECT Quantity, HireDate, Region, Price, Year, CustomerID, ProductID, OrderID, Salary FROM products GROUP BY Quantity, HireDate, Region, Price, Year, CustomerID, ProductID, OrderID, Salary;"
+  },
+  {
+    "input": "MIN Department FROM orders",
+    "output": "SELECT MIN(Department) FROM orders;"
+  },
+  {
+    "input": "COUNT orders WHERE Region = 'North'",
+    "output": "SELECT COUNT(*) FROM orders WHERE Region = 'North';"
+  },
+  {
+    "input": "AGGREGATE Profit BY Year, Department",
+    "output": "SELECT Year, Department, AVG(Profit) AS Total_Profit FROM transactions GROUP BY Year, Department;"
+  },
+  {
+    "input": "FILTER orders WHERE Department = 'Sales'",
+    "output": "SELECT * FROM orders WHERE Department = 'Sales';"
+  },
+  {
+    "input": "DELETE FROM products WHERE Region = 'North'",
+    "output": "DELETE FROM products WHERE Region = 'North';"
+  },
+  {
+    "input": "SELECT Region, ProductID, Department, HireDate, Salary, Quantity, OrderID, CustomerID, Year, CASE WHEN Salary > 50000 THEN 10000 ELSE 2023 END AS Quantity FROM customers",
+    "output": "SELECT Region, ProductID, Department, HireDate, Salary, Quantity, OrderID, CustomerID, Year, CASE WHEN Salary > 50000 THEN 10000 ELSE 2023 END AS Quantity FROM customers;"
+  },
+  {
+    "input": "UPDATE sales SET Region = 'HR' WHERE Region = 'North'",
+    "output": "UPDATE sales SET Region = 'HR' WHERE Region = 'North';"
+  },
+  {
+    "input": "SELECT HireDate, Region, Salary, Year, CustomerID, ProductID, OrderID, Department, Quantity, Price, CONCAT(OrderID, ' ', Region) AS Salary FROM products",
+    "output": "SELECT HireDate, Region, Salary, Year, CustomerID, ProductID, OrderID, Department, Quantity, Price, CONCAT(OrderID, ' ', Region) AS Salary FROM products;"
+  },
+  {
+    "input": "AVG CustomerID FROM employees",
+    "output": "SELECT AVG(CustomerID) FROM employees;"
+  },
+  {
+    "input": "UPDATE orders SET OrderID = 10000 WHERE Salary > 50000",
+    "output": "UPDATE orders SET OrderID = 10000 WHERE Salary > 50000;"
+  },
+  {
+    "input": "AVG Department FROM departments",
+    "output": "SELECT AVG(Department) FROM departments;"
+  },
+  {
+    "input": "SELECT Department, HireDate, Price, ProductID, Salary FROM sales WHERE Salary = (SELECT Salary FROM employees WHERE Department = 'Sales')",
+    "output": "SELECT Department, HireDate, Price, ProductID, Salary FROM sales WHERE Salary = (SELECT Salary FROM employees WHERE Department = 'Sales');"
+  },
+  {
+    "input": "FILTER employees WHERE Quantity < 10",
+    "output": "SELECT * FROM employees WHERE Quantity < 10;"
+  },
+  {
+    "input": "MAX CustomerID FROM orders",
+    "output": "SELECT MAX(CustomerID) FROM orders;"
+  },
+  {
+    "input": "SELECT Price, Year FROM departments WHERE Salary > 50000",
+    "output": "SELECT Price, Year FROM departments WHERE Salary > 50000;"
+  },
+  {
+    "input": "SELECT ProductID, Salary, Price, HireDate, CONCAT(ProductID, ' ', CustomerID) AS OrderID FROM departments",
+    "output": "SELECT ProductID, Salary, Price, HireDate, CONCAT(ProductID, ' ', CustomerID) AS OrderID FROM departments;"
+  },
+  {
+    "input": "FILTER sales WHERE ProductID IN (SELECT ProductID FROM products WHERE Region = 'North')",
+    "output": "SELECT * FROM sales WHERE ProductID IN (SELECT ProductID FROM products WHERE Region = 'North');"
+  },
+  {
+    "input": "SELECT ProductID, CustomerID, Department FROM departments WHERE Salary = (SELECT Salary FROM products WHERE Department = 'Sales')",
+    "output": "SELECT ProductID, CustomerID, Department FROM departments WHERE Salary = (SELECT Salary FROM products WHERE Department = 'Sales');"
+  },
+  {
+    "input": "MAX Quantity FROM transactions",
+    "output": "SELECT MAX(Quantity) FROM transactions;"
+  },
+  {
+    "input": "FILTER employees WHERE Region = 'North'",
+    "output": "SELECT * FROM employees WHERE Region = 'North';"
+  },
+  {
+    "input": "SELECT Salary, Department, CustomerID, Quantity, OrderID, HireDate, Year, ProductID, Region, Price, DATE_TRUNC('month', Department) AS Department FROM customers",
+    "output": "SELECT Salary, Department, CustomerID, Quantity, OrderID, HireDate, Year, ProductID, Region, Price, DATE_TRUNC('month', Department) AS Department FROM customers;"
+  },
+  {
+    "input": "DISTINCT Quantity FROM sales",
+    "output": "SELECT DISTINCT Quantity FROM sales;"
+  },
+  {
+    "input": "SELECT HireDate, Department, Quantity, Region, Price, Salary, OrderID, CASE WHEN Department = 'Sales' THEN 2023 ELSE 2023 END AS Quantity FROM employees",
+    "output": "SELECT HireDate, Department, Quantity, Region, Price, Salary, OrderID, CASE WHEN Department = 'Sales' THEN 2023 ELSE 2023 END AS Quantity FROM employees;"
+  },
+  {
+    "input": "AGGREGATE Profit BY Year, Region, Department",
+    "output": "SELECT Year, Region, Department, SUM(Profit) AS Total_Sales FROM departments GROUP BY Year, Region, Department;"
+  },
+  {
+    "input": "SELECT Price, CustomerID, Salary, Year FROM orders WHERE ProductID = (SELECT ProductID FROM products WHERE Salary > 50000)",
+    "output": "SELECT Price, CustomerID, Salary, Year FROM orders WHERE ProductID = (SELECT ProductID FROM products WHERE Salary > 50000);"
+  },
+  {
+    "input": "UNION employees AND transactions",
+    "output": "SELECT * FROM employees UNION SELECT * FROM transactions;"
+  },
+  {
+    "input": "GROUP products BY Region, HireDate, Year, Price, OrderID, Salary",
+    "output": "SELECT Region, HireDate, Year, Price, OrderID, Salary FROM products GROUP BY Region, HireDate, Year, Price, OrderID, Salary;"
+  },
+  {
+    "input": "DISTINCT Price FROM sales",
+    "output": "SELECT DISTINCT Price FROM sales;"
+  },
+  {
+    "input": "SELECT HireDate, Salary, Quantity, OrderID, ProductID, CustomerID, Department, Region, Year, CONCAT(Department, ' ', HireDate) AS Price FROM products",
+    "output": "SELECT HireDate, Salary, Quantity, OrderID, ProductID, CustomerID, Department, Region, Year, CONCAT(Department, ' ', HireDate) AS Price FROM products;"
+  },
+  {
+    "input": "UNION customers AND employees",
+    "output": "SELECT * FROM customers UNION SELECT * FROM employees;"
+  },
+  {
+    "input": "SUM Department FROM transactions",
+    "output": "SELECT SUM(Department) FROM transactions;"
+  },
+  {
+    "input": "INTERSECT products AND departments",
+    "output": "SELECT * FROM products INTERSECT SELECT * FROM departments;"
+  },
+  {
+    "input": "SELECT ProductID, Salary, Price, OrderID, Department, CONCAT(Quantity, ' ', OrderID) AS Year FROM orders",
+    "output": "SELECT ProductID, Salary, Price, OrderID, Department, CONCAT(Quantity, ' ', OrderID) AS Year FROM orders;"
+  },
+  {
+    "input": "JOIN departments AND transactions ON departments.Region = transactions.OrderID AND departments.ProductID = transactions.Region",
+    "output": "SELECT * FROM departments INNER JOIN transactions ON departments.Region = transactions.OrderID AND departments.ProductID = transactions.Region;"
+  },
+  {
+    "input": "EXCEPT customers AND sales",
+    "output": "SELECT * FROM customers EXCEPT SELECT * FROM sales;"
+  },
+  {
+    "input": "EXCEPT customers AND products",
+    "output": "SELECT * FROM customers EXCEPT SELECT * FROM products;"
+  },
+  {
+    "input": "FILTER customers WHERE ProductID IN (SELECT ProductID FROM products WHERE Year = 2023)",
+    "output": "SELECT * FROM customers WHERE ProductID IN (SELECT ProductID FROM products WHERE Year = 2023);"
+  },
+  {
+    "input": "SELECT Region FROM customers WHERE Region = (SELECT Region FROM customers WHERE Department = 'Sales')",
+    "output": "SELECT Region FROM customers WHERE Region = (SELECT Region FROM customers WHERE Department = 'Sales');"
+  },
+  {
+    "input": "SELECT HireDate, Price, Year, Department FROM customers WHERE Year = (SELECT Year FROM transactions WHERE Quantity < 10)",
+    "output": "SELECT HireDate, Price, Year, Department FROM customers WHERE Year = (SELECT Year FROM transactions WHERE Quantity < 10);"
+  },
+  {
+    "input": "SELECT OrderID, Price, Salary, Department, Year, Quantity, ProductID, Region, CASE WHEN Region = 'North' THEN 2023 ELSE 10000 END AS Year FROM transactions",
+    "output": "SELECT OrderID, Price, Salary, Department, Year, Quantity, ProductID, Region, CASE WHEN Region = 'North' THEN 2023 ELSE 10000 END AS Year FROM transactions;"
+  },
+  {
+    "input": "FILTER employees WHERE ProductID IN (SELECT ProductID FROM departments WHERE Region = 'North')",
+    "output": "SELECT * FROM employees WHERE ProductID IN (SELECT ProductID FROM departments WHERE Region = 'North');"
+  },
+  {
+    "input": "SELECT Region FROM sales WHERE ProductID = (SELECT ProductID FROM employees WHERE Salary > 50000)",
+    "output": "SELECT Region FROM sales WHERE ProductID = (SELECT ProductID FROM employees WHERE Salary > 50000);"
+  },
+  {
+    "input": "UPDATE employees SET Price = 'HR' WHERE Quantity < 10",
+    "output": "UPDATE employees SET Price = 'HR' WHERE Quantity < 10;"
+  },
+  {
+    "input": "SUM Salary FROM transactions",
+    "output": "SELECT SUM(Salary) FROM transactions;"
+  },
+  {
+    "input": "LIMIT customers TO 10",
+    "output": "SELECT * FROM customers LIMIT 10;"
+  },
+  {
+    "input": "AVG ProductID FROM departments",
+    "output": "SELECT AVG(ProductID) FROM departments;"
+  },
+  {
+    "input": "SELECT Region, DATE_TRUNC('month', Year) AS Salary FROM sales",
+    "output": "SELECT Region, DATE_TRUNC('month', Year) AS Salary FROM sales;"
+  },
+  {
+    "input": "UNION customers AND transactions",
+    "output": "SELECT * FROM customers UNION SELECT * FROM transactions;"
+  },
+  {
+    "input": "SORT employees BY Department DESC",
+    "output": "SELECT * FROM employees ORDER BY Department DESC;"
+  },
+  {
+    "input": "EXCEPT orders AND products",
+    "output": "SELECT * FROM orders EXCEPT SELECT * FROM products;"
+  },
+  {
+    "input": "INTERSECT sales AND orders",
+    "output": "SELECT * FROM sales INTERSECT SELECT * FROM orders;"
+  },
+  {
+    "input": "SELECT Price, HireDate, CustomerID, OrderID, ProductID, Quantity, Salary, Department, DATE_TRUNC('year', Salary) AS Year FROM departments",
+    "output": "SELECT Price, HireDate, CustomerID, OrderID, ProductID, Quantity, Salary, Department, DATE_TRUNC('year', Salary) AS Year FROM departments;"
+  },
+  {
+    "input": "INTERSECT departments AND departments",
+    "output": "SELECT * FROM departments INTERSECT SELECT * FROM departments;"
+  },
+  {
+    "input": "SELECT Salary, Region, ROW_NUMBER() OVER (PARTITION BY Department ORDER BY Region) AS row_num FROM products",
+    "output": "SELECT Salary, Region, ROW_NUMBER() OVER (PARTITION BY Department ORDER BY Region) AS row_num FROM products;"
+  },
+  {
+    "input": "MIN Salary FROM departments",
+    "output": "SELECT MIN(Salary) FROM departments;"
+  },
+  {
+    "input": "SUM Quantity FROM departments",
+    "output": "SELECT SUM(Quantity) FROM departments;"
+  },
+  {
+    "input": "COUNT departments WHERE Year = 2023",
+    "output": "SELECT COUNT(*) FROM departments WHERE Year = 2023;"
+  },
+  {
+    "input": "SELECT Price, Region, HireDate, DATE_TRUNC('year', Quantity) AS Region FROM transactions",
+    "output": "SELECT Price, Region, HireDate, DATE_TRUNC('year', Quantity) AS Region FROM transactions;"
+  },
+  {
+    "input": "DISTINCT Department FROM customers",
+    "output": "SELECT DISTINCT Department FROM customers;"
+  },
+  {
+    "input": "SELECT OrderID, Year, ProductID, HireDate, DATE_TRUNC('year', Price) AS Region FROM customers",
+    "output": "SELECT OrderID, Year, ProductID, HireDate, DATE_TRUNC('year', Price) AS Region FROM customers;"
+  }
+]
