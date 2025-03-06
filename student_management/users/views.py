@@ -5,7 +5,7 @@ from rest_framework.response import Response
 from rest_framework import status
 from .serializers import UserSerializer, StudentProfileSerializer
 from .models import StudentProfile
-from .permissions import IsAdmin, IsTeacher
+from .permissions import IsAdmin, IsTeacher,IsStudent
 
 User = get_user_model()
 
@@ -25,13 +25,23 @@ class AdminViewSet(viewsets.ModelViewSet):
 class TeacherViewSet(viewsets.ModelViewSet):
     queryset = User.objects.filter(role='teacher')
     serializer_class = UserSerializer
-    permission_classes = [IsAuthenticated]
+    permission_classes = [IsAuthenticated,IsTeacher]
 
 # Student View (Only Teachers Can Update Grades)
 class StudentViewSet(viewsets.ModelViewSet):
     queryset = User.objects.filter(role='student')
     serializer_class = UserSerializer
-    permission_classes = [IsAuthenticated, IsTeacher]
+    permission_classes = [IsAuthenticated]
+
+    def get_queryset(self):
+        """
+        - Teachers can view all students.
+        - Students can only view their own data.
+        """
+        user = self.request.user
+        if user.role == 'teacher':
+            return User.objects.filter(role='student')  # Teacher sees all students
+        return User.objects.filter(id=user.id)
 
     def update(self, request, *args, **kwargs):
         """Only teachers can update student grades"""
@@ -46,8 +56,8 @@ class StudentViewSet(viewsets.ModelViewSet):
         except StudentProfile.DoesNotExist:
             return Response({"error": "Student profile not found."}, status=status.HTTP_404_NOT_FOUND)
 
-        # Update StudentProfile
-        serializer = StudentProfileSerializer(student_profile, data=request.data, partial=True)
+        # Update User including StudentProfile
+        serializer = UserSerializer(student, data=request.data, partial=True)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_200_OK)
